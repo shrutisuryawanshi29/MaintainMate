@@ -1,6 +1,6 @@
 //
 //  AddIssueViewController.swift
-//  TenantTalk
+//  MaintainMate
 //
 //  Created by Shruti Suryawanshi on 2/6/24.
 //
@@ -65,8 +65,6 @@ extension AddIssueViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cameraBtn.setTitle(imageIssue == nil ? "TAKE A PIC" : "RETAKE PIC"  , for: .normal)
         cell.imgViw.image = self.imageIssue
         
-        cell.issueTextView.textColor = .darkGray
-        cell.issueTextView.delegate = self
         return cell
     }
     

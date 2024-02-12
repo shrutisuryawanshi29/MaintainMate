@@ -1,6 +1,6 @@
 //
 //  CameraTableViewCell.swift
-//  TenantTalk
+//  MaintainMate
 //
 //  Created by Shruti Suryawanshi on 2/6/24.
 //
@@ -9,7 +9,6 @@ import UIKit
 
 class CameraTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var issueTextView: UITextView!
     @IBOutlet weak var cameraBtn: UIButton!
     @IBOutlet weak var imgViw: UIImageView!
     
