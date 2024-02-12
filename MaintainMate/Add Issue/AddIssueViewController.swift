@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class AddIssueViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class AddIssueViewController: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     
     var imageIssue: UIImage? = nil
+    let issueTypeDropDown = DropDown()
+    let buildingDropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +40,39 @@ class AddIssueViewController: UIViewController {
         submitBtn.setTitleColor(.white, for: .normal)
         Utils.shared.cornerRadius(view: submitBtn)
         addIssueTblViw.register(UINib(nibName: "CameraTableViewCell", bundle: nil), forCellReuseIdentifier: "CameraTableViewCell")
+        
+        
     }
     
 
+    func issueTypeDropDownClick() {
+        //DROPDOWNS
+        if let cell = addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
+            issueTypeDropDown.anchorView = cell.txtFldIssueType
+            issueTypeDropDown.dataSource = ["Water Leakage", "Electricity Outage", "Somebody is locked", "Other"]
+            issueTypeDropDown.bottomOffset = CGPoint(x: 0 , y: cell.txtFldIssueType.bounds.height)
+            issueTypeDropDown.backgroundColor = Colors.shared.background
+            issueTypeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+                cell.txtFldIssueType.text = item
+            }
+            issueTypeDropDown.show()
+        }
+    }
+    
+    func buildingDropDownClick() {
+        //DROPDOWNS
+        if let cell = addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
+            buildingDropDown.anchorView = cell.txtFldBuilding
+            buildingDropDown.dataSource = ["Pop Martin Student Union", "CHHS", "Woodward", "Bio Info", "Atkins Library", "University Recreation (UREC)"]
+            buildingDropDown.bottomOffset = CGPoint(x: 0 , y: cell.txtFldBuilding.bounds.height)
+            buildingDropDown.backgroundColor = Colors.shared.background
+            buildingDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+                cell.txtFldBuilding.text = item
+            }
+            buildingDropDown.show()
+        }
+    }
+    
     @IBAction func backBtnClick(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -64,12 +97,16 @@ extension AddIssueViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.cameraBtn.setTitle(imageIssue == nil ? "TAKE A PIC" : "RETAKE PIC"  , for: .normal)
         cell.imgViw.image = self.imageIssue
+        Utils.shared.cornerRadius(view: cell.imgViw)
         
         cell.txtFldIssueType.delegate = self
         cell.txtFldBuilding.delegate = self
         cell.txtFldFloor.delegate = self
         cell.txtFldRoom.delegate = self
         cell.txtFldDescription.delegate = self
+        
+        cell.txtFldIssueType.tag = 10
+        cell.txtFldBuilding.tag = 20
         
         return cell
     }
@@ -80,17 +117,12 @@ extension AddIssueViewController: UITableViewDelegate, UITableViewDataSource {
 extension AddIssueViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
-
         guard let image = info[.originalImage] as? UIImage else {
             print("No image found")
             return
         }
-
-        
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
-        // print out the image size as a test
-        print(image.size)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -103,6 +135,18 @@ extension AddIssueViewController : UITextFieldDelegate {
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 10 {
+            issueTypeDropDownClick()
+            return false
+        }
+        if textField.tag == 20 {
+            buildingDropDownClick()
+            return false
+        }
         return true
     }
     
