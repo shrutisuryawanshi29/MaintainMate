@@ -14,4 +14,7 @@ public class Colors {
     let background = UIColor(red: 247/256, green: 246/256, blue: 237/256, alpha: 1)
     let primaryDark = UIColor(red: 173/256, green: 120/256, blue: 147/256, alpha: 1)
     let primaryLight = UIColor(red: 120/256, green: 173/256, blue: 172/256, alpha: 1)
+    
+    let darkText = UIColor(red: 84/256, green: 89/256, blue: 78/256, alpha: 1)
+    
 }

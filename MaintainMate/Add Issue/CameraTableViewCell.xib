@@ -16,68 +16,67 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="830"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zE7-9i-x4p">
-                        <rect key="frame" x="18" y="21" width="355" height="45"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zE7-9i-x4p" customClass="MFTextField">
+                        <rect key="frame" x="18" y="21" width="355" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="8qV-zy-Jd5"/>
+                            <constraint firstAttribute="height" constant="50" id="8qV-zy-Jd5"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mI7-Hi-n0D">
-                        <rect key="frame" x="18" y="84" width="355" height="45"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mI7-Hi-n0D" customClass="MFTextField">
+                        <rect key="frame" x="18" y="89" width="355" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="AG2-s6-Ddg"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="BRb-eW-p5J"/>
+                            <constraint firstAttribute="height" constant="50" id="AG2-s6-Ddg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-dm-Cqu">
-                        <rect key="frame" x="18" y="147" width="355" height="45"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-dm-Cqu" customClass="MFTextField">
+                        <rect key="frame" x="18" y="157" width="355" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="FeH-KP-klY"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="dIm-sV-Kzo"/>
+                            <constraint firstAttribute="height" constant="50" id="FeH-KP-klY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ra3-B2-c5c">
-                        <rect key="frame" x="18" y="210" width="355" height="45"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ra3-B2-c5c" customClass="MFTextField">
+                        <rect key="frame" x="18" y="225" width="355" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="F7h-hr-gli"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="OfG-Em-2VB"/>
+                            <constraint firstAttribute="height" constant="50" id="F7h-hr-gli"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCZ-c9-aVO">
-                        <rect key="frame" x="20" y="338" width="351" height="200"/>
+                        <rect key="frame" x="20" y="363" width="351" height="300"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-es-BK9">
-                                <rect key="frame" x="0.0" y="0.0" width="351" height="155"/>
+                                <rect key="frame" x="147.33333333333337" y="0.0" width="203.66666666666663" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="jn4-Pa-mi2"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoU-GU-9A4">
-                                <rect key="frame" x="104.33333333333333" y="160" width="142.33333333333337" height="35"/>
+                                <rect key="frame" x="0.0" y="0.0" width="142.33333333333334" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system" title="TAKE A PIC"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="3yz-AG-MHP"/>
-                            <constraint firstItem="fsF-es-BK9" firstAttribute="leading" secondItem="yCZ-c9-aVO" secondAttribute="leading" id="RTL-Bf-RzL"/>
+                            <constraint firstAttribute="height" constant="300" id="3yz-AG-MHP"/>
+                            <constraint firstItem="WoU-GU-9A4" firstAttribute="leading" secondItem="yCZ-c9-aVO" secondAttribute="leading" id="8xf-fX-hfq"/>
                             <constraint firstItem="fsF-es-BK9" firstAttribute="top" secondItem="yCZ-c9-aVO" secondAttribute="top" id="Uca-2D-ue4"/>
-                            <constraint firstAttribute="bottom" secondItem="WoU-GU-9A4" secondAttribute="bottom" constant="5" id="V9N-Sa-lXR"/>
-                            <constraint firstItem="WoU-GU-9A4" firstAttribute="centerX" secondItem="yCZ-c9-aVO" secondAttribute="centerX" id="mLY-Eo-Q4Z"/>
+                            <constraint firstItem="WoU-GU-9A4" firstAttribute="top" secondItem="yCZ-c9-aVO" secondAttribute="top" id="XEL-Px-WH2"/>
                             <constraint firstAttribute="trailing" secondItem="fsF-es-BK9" secondAttribute="trailing" id="oHO-xr-xjZ"/>
-                            <constraint firstItem="WoU-GU-9A4" firstAttribute="top" secondItem="fsF-es-BK9" secondAttribute="bottom" constant="5" id="zMY-s8-RsR"/>
+                            <constraint firstItem="fsF-es-BK9" firstAttribute="leading" secondItem="WoU-GU-9A4" secondAttribute="trailing" constant="5" id="ykY-1k-z5f"/>
                         </constraints>
                     </view>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axY-wI-xpK">
-                        <rect key="frame" x="18" y="273" width="355" height="45"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axY-wI-xpK" customClass="MFTextField">
+                        <rect key="frame" x="18" y="293" width="355" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="qA0-U1-26N"/>
+                            <constraint firstAttribute="height" constant="50" id="qA0-U1-26N"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -111,10 +110,32 @@
             <connections>
                 <outlet property="cameraBtn" destination="WoU-GU-9A4" id="n8B-1V-85D"/>
                 <outlet property="imgViw" destination="fsF-es-BK9" id="nwb-Sn-0jk"/>
+                <outlet property="txtFldBuilding" destination="mI7-Hi-n0D" id="70e-xT-dFd"/>
+                <outlet property="txtFldDescription" destination="axY-wI-xpK" id="bjc-Wj-586"/>
+                <outlet property="txtFldFloor" destination="bAh-dm-Cqu" id="MKT-7r-ypM"/>
+                <outlet property="txtFldIssueType" destination="zE7-9i-x4p" id="WMg-Zh-V5S"/>
+                <outlet property="txtFldRoom" destination="ra3-B2-c5c" id="xQS-Ms-2Q9"/>
             </connections>
             <point key="canvasLocation" x="26.717557251908396" y="457.04225352112678"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="axY-wI-xpK">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="bAh-dm-Cqu">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="mI7-Hi-n0D">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="ra3-B2-c5c">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="zE7-9i-x4p">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>
     </resources>

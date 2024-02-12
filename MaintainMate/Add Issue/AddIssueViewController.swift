@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddIssueViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate{
+class AddIssueViewController: UIViewController {
 
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var addIssueTblViw: UITableView!
@@ -65,13 +65,19 @@ extension AddIssueViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cameraBtn.setTitle(imageIssue == nil ? "TAKE A PIC" : "RETAKE PIC"  , for: .normal)
         cell.imgViw.image = self.imageIssue
         
+        cell.txtFldIssueType.delegate = self
+        cell.txtFldBuilding.delegate = self
+        cell.txtFldFloor.delegate = self
+        cell.txtFldRoom.delegate = self
+        cell.txtFldDescription.delegate = self
+        
         return cell
     }
     
     
 }
 
-extension AddIssueViewController {
+extension AddIssueViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
@@ -91,4 +97,13 @@ extension AddIssueViewController {
         self.view.endEditing(true)
         return false
     }
+}
+
+extension AddIssueViewController : UITextFieldDelegate {
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

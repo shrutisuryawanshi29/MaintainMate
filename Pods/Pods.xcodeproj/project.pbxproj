@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0891A8E7398E87899347B971ACD021BA /* UIFont+MaterialTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 6649296EC6E9C63622692B8E959CCBEB /* UIFont+MaterialTextField.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		421C7007D063211F8603DBFDBBFB118C /* UITextField+MFClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 601BEB9DDEDF1309D16328DDFC9259F3 /* UITextField+MFClearButton.m */; };
+		509B4789B2B71473AA2D9BC9E73DA788 /* Pods-MaintainMate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE00EF627262016090DF775C6F79C0ED /* Pods-MaintainMate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51A0EB64D431848A3DEB28C34FE195CD /* MaterialTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B80F57D9935991A05CDC6C343A9D74F1 /* MaterialTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60040439EA30FBAFBFFAD070FA7FC1FA /* UIFont+MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9ED310EA707A0B9058F08EE973DE5D /* UIFont+MaterialTextField.m */; };
+		6863BB272A68792DEF059BBD8864C8D7 /* MFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDA2C5ABA14C0F995A6A01141CF17A1 /* MFTextField.m */; };
+		7524FE1685D28BAC2230CDC8BC2C7D8C /* MFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = DE677DB73F80BC0A61F632AB419A6E63 /* MFTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B0444E307468870FF7ABC7F3B7D00C6 /* UITextField+MFClearButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A707C994F1D9F5EFA1E4C3C0F970E8 /* UITextField+MFClearButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7FFBD067078F06DCDBB9879AAF2FDFFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		85A769D5060052EE3FA6772F738D7FD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		86994CED900DE85C458F256FDA41A0D3 /* UIImage+MFTint.h in Headers */ = {isa = PBXBuildFile; fileRef = 64C3AF7593A0AACBAB8A2A801BAE975C /* UIImage+MFTint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8CE24791FB53FE05323541F768B8CBF8 /* UIImage+MFTint.m in Sources */ = {isa = PBXBuildFile; fileRef = E42C0F0936D6988230981466BB31C199 /* UIImage+MFTint.m */; };
+		B27FC996E7726A3A60D2E7EDC434AB18 /* MaterialTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D0A1A04D4FE45D4891B377978133C22 /* MaterialTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4A9AD5181DA98DC9606CFD4C4C82C3E /* UIColor+MaterialTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 223AB29BF7D31C0C1741E6429093EC49 /* UIColor+MaterialTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE17AC62E382B8BD6FC9126AFED9E898 /* MaterialTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF6CD6FEE36B836B248081D0AC7B14D /* MaterialTextField-dummy.m */; };
+		D3EA1EDCD15E8C48B66FF15DC3B57443 /* UIColor+MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF03B234131CF2762B98D68425A168 /* UIColor+MaterialTextField.m */; };
+		F35D79F64D324108BA03976BBB4FA790 /* Pods-MaintainMate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB2694CC88E5A41BAA79DD2E086AA5 /* Pods-MaintainMate-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7FB70F148AFFA2BB9A63A360C292029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D4D28FDC0D365E38ECA3741AF256A67;
+			remoteInfo = MaterialTextField;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		029924B8E59BD898CDADEB88BC76E37C /* Pods-MaintainMate */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MaintainMate"; path = Pods_MaintainMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0A1A04D4FE45D4891B377978133C22 /* MaterialTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialTextField.h; path = MaterialTextField/MaterialTextField.h; sourceTree = "<group>"; };
+		2047C5439E07BE65E88E62D0C2FBF4E9 /* Pods-MaintainMate-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MaintainMate-Info.plist"; sourceTree = "<group>"; };
+		223AB29BF7D31C0C1741E6429093EC49 /* UIColor+MaterialTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialTextField.h"; path = "MaterialTextField/UIColor+MaterialTextField.h"; sourceTree = "<group>"; };
+		28DA92A562111C74A603DB57B4EFB9DD /* MaterialTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialTextField.modulemap; sourceTree = "<group>"; };
+		2A965A7757AC2C5383B5BA916829329E /* Pods-MaintainMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MaintainMate.release.xcconfig"; sourceTree = "<group>"; };
+		4528F775930CF623A6FC92648D7CFE2A /* Pods-MaintainMate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MaintainMate.modulemap"; sourceTree = "<group>"; };
+		58AF03B234131CF2762B98D68425A168 /* UIColor+MaterialTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialTextField.m"; path = "MaterialTextField/UIColor+MaterialTextField.m"; sourceTree = "<group>"; };
+		601BEB9DDEDF1309D16328DDFC9259F3 /* UITextField+MFClearButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+MFClearButton.m"; path = "MaterialTextField/UITextField+MFClearButton.m"; sourceTree = "<group>"; };
+		647A0915552CF4538D7376D35A666AD7 /* MaterialTextField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialTextField.debug.xcconfig; sourceTree = "<group>"; };
+		64C3AF7593A0AACBAB8A2A801BAE975C /* UIImage+MFTint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MFTint.h"; path = "MaterialTextField/UIImage+MFTint.h"; sourceTree = "<group>"; };
+		6649296EC6E9C63622692B8E959CCBEB /* UIFont+MaterialTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialTextField.h"; path = "MaterialTextField/UIFont+MaterialTextField.h"; sourceTree = "<group>"; };
+		6EDA2C5ABA14C0F995A6A01141CF17A1 /* MFTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MFTextField.m; path = MaterialTextField/MFTextField.m; sourceTree = "<group>"; };
+		70E1D5B20EFE55A05D5B021AAE701EF6 /* Pods-MaintainMate-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MaintainMate-acknowledgements.plist"; sourceTree = "<group>"; };
+		72CDA9434D8658C44371DA21E5BE96E5 /* Pods-MaintainMate-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MaintainMate-frameworks.sh"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7B2C797F7A638C24CB62277A6E96F82F /* Pods-MaintainMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MaintainMate.debug.xcconfig"; sourceTree = "<group>"; };
+		85A707C994F1D9F5EFA1E4C3C0F970E8 /* UITextField+MFClearButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+MFClearButton.h"; path = "MaterialTextField/UITextField+MFClearButton.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FFB2694CC88E5A41BAA79DD2E086AA5 /* Pods-MaintainMate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MaintainMate-dummy.m"; sourceTree = "<group>"; };
+		AE079A0866E74137A798E8AB7476DBEB /* MaterialTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialTextField-prefix.pch"; sourceTree = "<group>"; };
+		B1B55FCFCDDE702C4030577F8057C3B8 /* MaterialTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MaterialTextField-Info.plist"; sourceTree = "<group>"; };
+		B80F57D9935991A05CDC6C343A9D74F1 /* MaterialTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialTextField-umbrella.h"; sourceTree = "<group>"; };
+		BFF6CD6FEE36B836B248081D0AC7B14D /* MaterialTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialTextField-dummy.m"; sourceTree = "<group>"; };
+		D4A484F5F989FB61C7313083A35CA96A /* Pods-MaintainMate-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MaintainMate-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DE4AEE295969183E68102BB98180FDF7 /* MaterialTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MaterialTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE677DB73F80BC0A61F632AB419A6E63 /* MFTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MFTextField.h; path = MaterialTextField/MFTextField.h; sourceTree = "<group>"; };
+		DF9ED310EA707A0B9058F08EE973DE5D /* UIFont+MaterialTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialTextField.m"; path = "MaterialTextField/UIFont+MaterialTextField.m"; sourceTree = "<group>"; };
+		E42C0F0936D6988230981466BB31C199 /* UIImage+MFTint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MFTint.m"; path = "MaterialTextField/UIImage+MFTint.m"; sourceTree = "<group>"; };
+		E9C78A97A59CA4C759F7C1615954C588 /* MaterialTextField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialTextField.release.xcconfig; sourceTree = "<group>"; };
+		FE00EF627262016090DF775C6F79C0ED /* Pods-MaintainMate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MaintainMate-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9697AD246D4CE48F3CD3ADDF8847E37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85A769D5060052EE3FA6772F738D7FD5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D864800FD6AE5416BCCB646ED97FAE87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FFBD067078F06DCDBB9879AAF2FDFFF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5FE95DB1883357A1E73B11FE986AEC5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3058B38B3F9537DB4893153D8EAC071 /* MaterialTextField */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7E58E3F5C6D665CD8C831672C12935A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE4AEE295969183E68102BB98180FDF7 /* MaterialTextField.framework */,
+				029924B8E59BD898CDADEB88BC76E37C /* Pods-MaintainMate */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAF5855A9E7F4E4BF9DF00FA80CF1EB4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E29FBC5F67F1FB981DC30FC45658D1E8 /* Pods-MaintainMate */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				5FE95DB1883357A1E73B11FE986AEC5B /* Pods */,
+				7E58E3F5C6D665CD8C831672C12935A5 /* Products */,
+				BAF5855A9E7F4E4BF9DF00FA80CF1EB4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E29FBC5F67F1FB981DC30FC45658D1E8 /* Pods-MaintainMate */ = {
+			isa = PBXGroup;
+			children = (
+				4528F775930CF623A6FC92648D7CFE2A /* Pods-MaintainMate.modulemap */,
+				D4A484F5F989FB61C7313083A35CA96A /* Pods-MaintainMate-acknowledgements.markdown */,
+				70E1D5B20EFE55A05D5B021AAE701EF6 /* Pods-MaintainMate-acknowledgements.plist */,
+				9FFB2694CC88E5A41BAA79DD2E086AA5 /* Pods-MaintainMate-dummy.m */,
+				72CDA9434D8658C44371DA21E5BE96E5 /* Pods-MaintainMate-frameworks.sh */,
+				2047C5439E07BE65E88E62D0C2FBF4E9 /* Pods-MaintainMate-Info.plist */,
+				FE00EF627262016090DF775C6F79C0ED /* Pods-MaintainMate-umbrella.h */,
+				7B2C797F7A638C24CB62277A6E96F82F /* Pods-MaintainMate.debug.xcconfig */,
+				2A965A7757AC2C5383B5BA916829329E /* Pods-MaintainMate.release.xcconfig */,
+			);
+			name = "Pods-MaintainMate";
+			path = "Target Support Files/Pods-MaintainMate";
+			sourceTree = "<group>";
+		};
+		E3058B38B3F9537DB4893153D8EAC071 /* MaterialTextField */ = {
+			isa = PBXGroup;
+			children = (
+				0D0A1A04D4FE45D4891B377978133C22 /* MaterialTextField.h */,
+				DE677DB73F80BC0A61F632AB419A6E63 /* MFTextField.h */,
+				6EDA2C5ABA14C0F995A6A01141CF17A1 /* MFTextField.m */,
+				223AB29BF7D31C0C1741E6429093EC49 /* UIColor+MaterialTextField.h */,
+				58AF03B234131CF2762B98D68425A168 /* UIColor+MaterialTextField.m */,
+				6649296EC6E9C63622692B8E959CCBEB /* UIFont+MaterialTextField.h */,
+				DF9ED310EA707A0B9058F08EE973DE5D /* UIFont+MaterialTextField.m */,
+				64C3AF7593A0AACBAB8A2A801BAE975C /* UIImage+MFTint.h */,
+				E42C0F0936D6988230981466BB31C199 /* UIImage+MFTint.m */,
+				85A707C994F1D9F5EFA1E4C3C0F970E8 /* UITextField+MFClearButton.h */,
+				601BEB9DDEDF1309D16328DDFC9259F3 /* UITextField+MFClearButton.m */,
+				F60E419A33EF92CE584B5EE5A53BABC2 /* Support Files */,
+			);
+			path = MaterialTextField;
+			sourceTree = "<group>";
+		};
+		F60E419A33EF92CE584B5EE5A53BABC2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				28DA92A562111C74A603DB57B4EFB9DD /* MaterialTextField.modulemap */,
+				BFF6CD6FEE36B836B248081D0AC7B14D /* MaterialTextField-dummy.m */,
+				B1B55FCFCDDE702C4030577F8057C3B8 /* MaterialTextField-Info.plist */,
+				AE079A0866E74137A798E8AB7476DBEB /* MaterialTextField-prefix.pch */,
+				B80F57D9935991A05CDC6C343A9D74F1 /* MaterialTextField-umbrella.h */,
+				647A0915552CF4538D7376D35A666AD7 /* MaterialTextField.debug.xcconfig */,
+				E9C78A97A59CA4C759F7C1615954C588 /* MaterialTextField.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MaterialTextField";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		496C060853D6D1A23023F33B646EE2F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509B4789B2B71473AA2D9BC9E73DA788 /* Pods-MaintainMate-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E995F33190E1306B01245AA54428894 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27FC996E7726A3A60D2E7EDC434AB18 /* MaterialTextField.h in Headers */,
+				51A0EB64D431848A3DEB28C34FE195CD /* MaterialTextField-umbrella.h in Headers */,
+				7524FE1685D28BAC2230CDC8BC2C7D8C /* MFTextField.h in Headers */,
+				C4A9AD5181DA98DC9606CFD4C4C82C3E /* UIColor+MaterialTextField.h in Headers */,
+				0891A8E7398E87899347B971ACD021BA /* UIFont+MaterialTextField.h in Headers */,
+				86994CED900DE85C458F256FDA41A0D3 /* UIImage+MFTint.h in Headers */,
+				7B0444E307468870FF7ABC7F3B7D00C6 /* UITextField+MFClearButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0AA160D082765552506E0F09EA94122E /* Pods-MaintainMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698E2C7ACBFD3C8723A8B96B6297B632 /* Build configuration list for PBXNativeTarget "Pods-MaintainMate" */;
+			buildPhases = (
+				496C060853D6D1A23023F33B646EE2F2 /* Headers */,
+				F59B6AE56D769E9A9B9D507B36F7C725 /* Sources */,
+				B9697AD246D4CE48F3CD3ADDF8847E37 /* Frameworks */,
+				649C3D148126E024A16209D55E4F1784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BED440D862598C772731F1A29482518 /* PBXTargetDependency */,
+			);
+			name = "Pods-MaintainMate";
+			productName = Pods_MaintainMate;
+			productReference = 029924B8E59BD898CDADEB88BC76E37C /* Pods-MaintainMate */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D4D28FDC0D365E38ECA3741AF256A67 /* MaterialTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1C740F55206B098E9D747D048D5909E /* Build configuration list for PBXNativeTarget "MaterialTextField" */;
+			buildPhases = (
+				8E995F33190E1306B01245AA54428894 /* Headers */,
+				1261B684B0AD5B834EDEA0C2124A3D12 /* Sources */,
+				D864800FD6AE5416BCCB646ED97FAE87 /* Frameworks */,
+				3F8E0594380B52C7AA0360B15DAE46E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaterialTextField;
+			productName = MaterialTextField;
+			productReference = DE4AEE295969183E68102BB98180FDF7 /* MaterialTextField.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7E58E3F5C6D665CD8C831672C12935A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D4D28FDC0D365E38ECA3741AF256A67 /* MaterialTextField */,
+				0AA160D082765552506E0F09EA94122E /* Pods-MaintainMate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F8E0594380B52C7AA0360B15DAE46E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		649C3D148126E024A16209D55E4F1784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1261B684B0AD5B834EDEA0C2124A3D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE17AC62E382B8BD6FC9126AFED9E898 /* MaterialTextField-dummy.m in Sources */,
+				6863BB272A68792DEF059BBD8864C8D7 /* MFTextField.m in Sources */,
+				D3EA1EDCD15E8C48B66FF15DC3B57443 /* UIColor+MaterialTextField.m in Sources */,
+				60040439EA30FBAFBFFAD070FA7FC1FA /* UIFont+MaterialTextField.m in Sources */,
+				8CE24791FB53FE05323541F768B8CBF8 /* UIImage+MFTint.m in Sources */,
+				421C7007D063211F8603DBFDBBFB118C /* UITextField+MFClearButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59B6AE56D769E9A9B9D507B36F7C725 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35D79F64D324108BA03976BBB4FA790 /* Pods-MaintainMate-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BED440D862598C772731F1A29482518 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MaterialTextField;
+			target = 6D4D28FDC0D365E38ECA3741AF256A67 /* MaterialTextField */;
+			targetProxy = D7FB70F148AFFA2BB9A63A360C292029 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07DA15043C064DD4DD02374E4A727C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 647A0915552CF4538D7376D35A666AD7 /* MaterialTextField.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialTextField/MaterialTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialTextField/MaterialTextField-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialTextField/MaterialTextField.modulemap";
+				PRODUCT_MODULE_NAME = MaterialTextField;
+				PRODUCT_NAME = MaterialTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A1FA2070F23EF252F0D306AD29ECA4A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A965A7757AC2C5383B5BA916829329E /* Pods-MaintainMate.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MaintainMate/Pods-MaintainMate-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MaintainMate/Pods-MaintainMate.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3C65DEF9660BAC04B050CB591946103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B2C797F7A638C24CB62277A6E96F82F /* Pods-MaintainMate.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MaintainMate/Pods-MaintainMate-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MaintainMate/Pods-MaintainMate.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA13D9925C464FA9C2213A04A3C68EB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9C78A97A59CA4C759F7C1615954C588 /* MaterialTextField.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialTextField/MaterialTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialTextField/MaterialTextField-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialTextField/MaterialTextField.modulemap";
+				PRODUCT_MODULE_NAME = MaterialTextField;
+				PRODUCT_NAME = MaterialTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E873CA97BD124B21839AF13C9BE1CD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */,
+				E873CA97BD124B21839AF13C9BE1CD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		698E2C7ACBFD3C8723A8B96B6297B632 /* Build configuration list for PBXNativeTarget "Pods-MaintainMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3C65DEF9660BAC04B050CB591946103 /* Debug */,
+				A1FA2070F23EF252F0D306AD29ECA4A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1C740F55206B098E9D747D048D5909E /* Build configuration list for PBXNativeTarget "MaterialTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DA15043C064DD4DD02374E4A727C3E /* Debug */,
+				BA13D9925C464FA9C2213A04A3C68EB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
