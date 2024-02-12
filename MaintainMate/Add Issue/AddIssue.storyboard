@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Issue View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddIssueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="AddIssueViewController" customModule="TenantTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDS-C7-CH6">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-xo-28x">
+                                        <rect key="frame" x="18" y="42" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="M4i-TK-bYv"/>
+                                            <constraint firstAttribute="width" constant="40" id="Mbp-pe-fTV"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="backBtnClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mMm-nF-ffv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sZe-xo-28x" firstAttribute="leading" secondItem="pDS-C7-CH6" secondAttribute="leading" constant="18" id="Kfg-mX-Z7K"/>
+                                    <constraint firstAttribute="height" constant="100" id="bnv-Xe-eQy"/>
+                                    <constraint firstAttribute="bottom" secondItem="sZe-xo-28x" secondAttribute="bottom" constant="18" id="brV-OI-r5L"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qnY-RQ-jDo">
+                                <rect key="frame" x="0.0" y="118" width="393" height="632"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="HDv-nt-drA"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="ZUv-dg-MWx"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxt-gc-SIo">
+                                <rect key="frame" x="18" y="768" width="357" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Pdu-Sc-jj3"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SUBMIT"/>
+                                <connections>
+                                    <action selector="submitBtnClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vJA-Rm-swp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pDS-C7-CH6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="8R5-hA-evd"/>
+                            <constraint firstItem="Kxt-gc-SIo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="FPd-VG-Fd4"/>
+                            <constraint firstItem="Kxt-gc-SIo" firstAttribute="top" secondItem="qnY-RQ-jDo" secondAttribute="bottom" constant="18" id="GF0-rx-HFr"/>
+                            <constraint firstItem="qnY-RQ-jDo" firstAttribute="top" secondItem="pDS-C7-CH6" secondAttribute="bottom" constant="18" id="Oyc-4R-HCD"/>
+                            <constraint firstItem="Kxt-gc-SIo" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="QEk-Uk-85V"/>
+                            <constraint firstItem="pDS-C7-CH6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RmU-9R-3UV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kxt-gc-SIo" secondAttribute="trailing" constant="18" id="amk-Pi-s4P"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pDS-C7-CH6" secondAttribute="trailing" id="aym-zU-NqI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qnY-RQ-jDo" secondAttribute="trailing" id="g3C-g2-JP5"/>
+                            <constraint firstItem="qnY-RQ-jDo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zlV-zB-Sof"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addIssueTblViw" destination="qnY-RQ-jDo" id="jXL-gH-18f"/>
+                        <outlet property="backBtn" destination="sZe-xo-28x" id="BUv-gP-X4L"/>
+                        <outlet property="submitBtn" destination="Kxt-gc-SIo" id="bg7-wg-6jK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

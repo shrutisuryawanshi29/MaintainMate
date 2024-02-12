@@ -13,6 +13,16 @@
 		0E1ABAB32B7AAEA1000D8194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAB12B7AAEA1000D8194 /* Main.storyboard */; };
 		0E1ABAB52B7AAEA3000D8194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAB42B7AAEA3000D8194 /* Assets.xcassets */; };
 		0E1ABAB82B7AAEA3000D8194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAB62B7AAEA3000D8194 /* LaunchScreen.storyboard */; };
+		0E1ABAC82B7AB04D000D8194 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAC12B7AB04D000D8194 /* Colors.swift */; };
+		0E1ABAC92B7AB04D000D8194 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAC22B7AB04D000D8194 /* Utils.swift */; };
+		0E1ABACA2B7AB04D000D8194 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAC42B7AB04D000D8194 /* DashboardViewController.swift */; };
+		0E1ABACB2B7AB04D000D8194 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAC52B7AB04D000D8194 /* DashboardTableViewCell.swift */; };
+		0E1ABACC2B7AB04D000D8194 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAC62B7AB04D000D8194 /* DashboardTableViewCell.xib */; };
+		0E1ABACD2B7AB04D000D8194 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAC72B7AB04D000D8194 /* Dashboard.storyboard */; };
+		0E1ABAD32B7AB08F000D8194 /* CameraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABACF2B7AB08F000D8194 /* CameraTableViewCell.swift */; };
+		0E1ABAD42B7AB08F000D8194 /* AddIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD02B7AB08F000D8194 /* AddIssue.storyboard */; };
+		0E1ABAD52B7AB08F000D8194 /* AddIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */; };
+		0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		0E1ABAB42B7AAEA3000D8194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E1ABAB72B7AAEA3000D8194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E1ABAB92B7AAEA3000D8194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E1ABAC12B7AB04D000D8194 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0E1ABAC22B7AB04D000D8194 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0E1ABAC42B7AB04D000D8194 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0E1ABAC52B7AB04D000D8194 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		0E1ABAC62B7AB04D000D8194 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
+		0E1ABAC72B7AB04D000D8194 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		0E1ABACF2B7AB08F000D8194 /* CameraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraTableViewCell.swift; sourceTree = "<group>"; };
+		0E1ABAD02B7AB08F000D8194 /* AddIssue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddIssue.storyboard; sourceTree = "<group>"; };
+		0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewController.swift; sourceTree = "<group>"; };
+		0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,9 @@
 		0E1ABAAA2B7AAEA1000D8194 /* MaintainMate */ = {
 			isa = PBXGroup;
 			children = (
+				0E1ABACE2B7AB08F000D8194 /* Add Issue */,
+				0E1ABABF2B7AB04D000D8194 /* Common */,
+				0E1ABAC32B7AB04D000D8194 /* Dashboard */,
 				0E1ABAAB2B7AAEA1000D8194 /* AppDelegate.swift */,
 				0E1ABAAD2B7AAEA1000D8194 /* SceneDelegate.swift */,
 				0E1ABAAF2B7AAEA1000D8194 /* ViewController.swift */,
@@ -65,6 +88,45 @@
 				0E1ABAB92B7AAEA3000D8194 /* Info.plist */,
 			);
 			path = MaintainMate;
+			sourceTree = "<group>";
+		};
+		0E1ABABF2B7AB04D000D8194 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0E1ABAC02B7AB04D000D8194 /* Colors */,
+				0E1ABAC22B7AB04D000D8194 /* Utils.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0E1ABAC02B7AB04D000D8194 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				0E1ABAC12B7AB04D000D8194 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		0E1ABAC32B7AB04D000D8194 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				0E1ABAC42B7AB04D000D8194 /* DashboardViewController.swift */,
+				0E1ABAC52B7AB04D000D8194 /* DashboardTableViewCell.swift */,
+				0E1ABAC62B7AB04D000D8194 /* DashboardTableViewCell.xib */,
+				0E1ABAC72B7AB04D000D8194 /* Dashboard.storyboard */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		0E1ABACE2B7AB08F000D8194 /* Add Issue */ = {
+			isa = PBXGroup;
+			children = (
+				0E1ABACF2B7AB08F000D8194 /* CameraTableViewCell.swift */,
+				0E1ABAD02B7AB08F000D8194 /* AddIssue.storyboard */,
+				0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */,
+				0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */,
+			);
+			path = "Add Issue";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +187,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1ABAD42B7AB08F000D8194 /* AddIssue.storyboard in Resources */,
 				0E1ABAB82B7AAEA3000D8194 /* LaunchScreen.storyboard in Resources */,
+				0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */,
+				0E1ABACD2B7AB04D000D8194 /* Dashboard.storyboard in Resources */,
 				0E1ABAB52B7AAEA3000D8194 /* Assets.xcassets in Resources */,
+				0E1ABACC2B7AB04D000D8194 /* DashboardTableViewCell.xib in Resources */,
 				0E1ABAB32B7AAEA1000D8194 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1ABAD32B7AB08F000D8194 /* CameraTableViewCell.swift in Sources */,
+				0E1ABAC92B7AB04D000D8194 /* Utils.swift in Sources */,
+				0E1ABACA2B7AB04D000D8194 /* DashboardViewController.swift in Sources */,
 				0E1ABAB02B7AAEA1000D8194 /* ViewController.swift in Sources */,
+				0E1ABAC82B7AB04D000D8194 /* Colors.swift in Sources */,
 				0E1ABAAC2B7AAEA1000D8194 /* AppDelegate.swift in Sources */,
 				0E1ABAAE2B7AAEA1000D8194 /* SceneDelegate.swift in Sources */,
+				0E1ABAD52B7AB08F000D8194 /* AddIssueViewController.swift in Sources */,
+				0E1ABACB2B7AB04D000D8194 /* DashboardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
