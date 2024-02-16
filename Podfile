@@ -8,5 +8,8 @@ target 'MaintainMate' do
   # Pods for MaintainMate
   pod 'MaterialTextField', '~> 0.2'
   pod 'DropDown'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
 
 end

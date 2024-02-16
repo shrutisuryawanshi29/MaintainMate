@@ -7,6 +7,9 @@
 
 import UIKit
 import DropDown
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 class AddIssueViewController: UIViewController {
 
@@ -22,6 +25,8 @@ class AddIssueViewController: UIViewController {
         super.viewDidLoad()
 
         initialSetup()
+        
+        fetchBuildingListFromDb()
         
     }
     
@@ -40,8 +45,6 @@ class AddIssueViewController: UIViewController {
         submitBtn.setTitleColor(.white, for: .normal)
         Utils.shared.cornerRadius(view: submitBtn)
         addIssueTblViw.register(UINib(nibName: "CameraTableViewCell", bundle: nil), forCellReuseIdentifier: "CameraTableViewCell")
-        
-        
     }
     
 
@@ -72,6 +75,15 @@ class AddIssueViewController: UIViewController {
             buildingDropDown.show()
         }
     }
+    
+    
+    //MARK: APIS
+    func fetchBuildingListFromDb() {
+//        var ref: DatabaseReference!
+//
+//        ref = Database.database().reference()
+    }
+    
     
     @IBAction func backBtnClick(_ sender: Any) {
         self.dismiss(animated: true)
