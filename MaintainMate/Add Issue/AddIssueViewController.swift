@@ -10,6 +10,7 @@ import DropDown
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseDatabase
 
 class AddIssueViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class AddIssueViewController: UIViewController {
     let issueTypeDropDown = DropDown()
     let buildingDropDown = DropDown()
     
+    var arrBuildings: [BuildingsModel] = []
+    var arrBuildingStr : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,7 +69,7 @@ class AddIssueViewController: UIViewController {
         //DROPDOWNS
         if let cell = addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
             buildingDropDown.anchorView = cell.txtFldBuilding
-            buildingDropDown.dataSource = ["Pop Martin Student Union", "CHHS", "Woodward", "Bio Info", "Atkins Library", "University Recreation (UREC)"]
+            buildingDropDown.dataSource = arrBuildingStr
             buildingDropDown.bottomOffset = CGPoint(x: 0 , y: cell.txtFldBuilding.bounds.height)
             buildingDropDown.backgroundColor = Colors.shared.background
             buildingDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -79,9 +82,27 @@ class AddIssueViewController: UIViewController {
     
     //MARK: APIS
     func fetchBuildingListFromDb() {
-//        var ref: DatabaseReference!
-//
-//        ref = Database.database().reference()
+        var database = Firestore.firestore()
+        
+        let collection = database.collection("buildings")
+        collection.getDocuments(completion: { [self] snapshot, error in
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            if let documents = snapshot?.documents {
+                for val in documents {
+                    print(val.data())
+                    var building = BuildingsModel()
+                    building.buildingFloors = val.data()["building_floors"] as? Int
+                    building.buildingName = val.data()["building_name"] as? String
+                    self.arrBuildings.append(building)
+                    
+                    self.arrBuildingStr.append((val.data()["building_name"] as? String)!)
+                }
+            }
+        })
+
     }
     
     

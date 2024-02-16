@@ -11,5 +11,6 @@ target 'MaintainMate' do
   pod 'FirebaseAnalytics'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseDatabase'
 
 end
