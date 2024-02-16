@@ -87,14 +87,13 @@
 		0E1ABAAA2B7AAEA1000D8194 /* MaintainMate */ = {
 			isa = PBXGroup;
 			children = (
+				0E4646162B7F260B006DD633 /* Register Login */,
 				0E4646132B7F1A26006DD633 /* Models */,
 				0E1ABACE2B7AB08F000D8194 /* Add Issue */,
 				0E1ABABF2B7AB04D000D8194 /* Common */,
 				0E1ABAC32B7AB04D000D8194 /* Dashboard */,
 				0E1ABAAB2B7AAEA1000D8194 /* AppDelegate.swift */,
 				0E1ABAAD2B7AAEA1000D8194 /* SceneDelegate.swift */,
-				0E1ABAAF2B7AAEA1000D8194 /* ViewController.swift */,
-				0E1ABAB12B7AAEA1000D8194 /* Main.storyboard */,
 				0E1ABAB42B7AAEA3000D8194 /* Assets.xcassets */,
 				0E1ABAB62B7AAEA3000D8194 /* LaunchScreen.storyboard */,
 				0E4646112B7F0B4D006DD633 /* GoogleService-Info.plist */,
@@ -148,6 +147,15 @@
 				0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E4646162B7F260B006DD633 /* Register Login */ = {
+			isa = PBXGroup;
+			children = (
+				0E1ABAAF2B7AAEA1000D8194 /* ViewController.swift */,
+				0E1ABAB12B7AAEA1000D8194 /* Main.storyboard */,
+			);
+			path = "Register Login";
 			sourceTree = "<group>";
 		};
 		80A42D01B6C34345F573EAB1 /* Frameworks */ = {
