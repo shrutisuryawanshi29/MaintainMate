@@ -70,7 +70,9 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    
+    @IBAction func backBtnClick(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
 }
 

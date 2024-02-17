@@ -13,7 +13,6 @@ class Utils {
     
     func cornerRadius(view: UIView, radius: CGFloat = 5) {
         view.layer.cornerRadius = radius
-        view.layer.masksToBounds = true
     }
     
     func setupTextField(textfield: MFTextField, placeholder: String="") {
@@ -26,4 +25,14 @@ class Utils {
     }
 }
 
-
+extension UIView {
+    func dropShadow(scale: Bool = true, shadowOpacity: Float = 0.1, shadowRadius: Float = 6) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 6
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+}

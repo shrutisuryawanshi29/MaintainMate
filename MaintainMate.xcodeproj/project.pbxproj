@@ -25,6 +25,9 @@
 		0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */; };
 		0E4646122B7F0B4D006DD633 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4646112B7F0B4D006DD633 /* GoogleService-Info.plist */; };
 		0E4646152B7F1A3A006DD633 /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */; };
+		0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */; };
+		0EFEC85B2B8005D3009CFD49 /* AdminDBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */; };
+		0EFEC85C2B8005D3009CFD49 /* AdminDBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */; };
 		BA2C7FD232DD2A02E9106BDF /* Pods_MaintainMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F14C71B8BEBF9F693C96B22 /* Pods_MaintainMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
 		0E4646112B7F0B4D006DD633 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
+		0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBViewController.swift; sourceTree = "<group>"; };
+		0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBTableViewCell.swift; sourceTree = "<group>"; };
+		0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminDBTableViewCell.xib; sourceTree = "<group>"; };
 		0F14C71B8BEBF9F693C96B22 /* Pods_MaintainMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaintainMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B2A863BC274DBF4FC8DCBE /* Pods-MaintainMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintainMate.release.xcconfig"; path = "Target Support Files/Pods-MaintainMate/Pods-MaintainMate.release.xcconfig"; sourceTree = "<group>"; };
 		E8E0AD8540FDFCD802087A11 /* Pods-MaintainMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintainMate.debug.xcconfig"; path = "Target Support Files/Pods-MaintainMate/Pods-MaintainMate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 				0E1ABAC52B7AB04D000D8194 /* DashboardTableViewCell.swift */,
 				0E1ABAC62B7AB04D000D8194 /* DashboardTableViewCell.xib */,
 				0E1ABAC72B7AB04D000D8194 /* Dashboard.storyboard */,
+				0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */,
+				0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */,
+				0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 				0E1ABACD2B7AB04D000D8194 /* Dashboard.storyboard in Resources */,
 				0E1ABAB52B7AAEA3000D8194 /* Assets.xcassets in Resources */,
 				0E1ABACC2B7AB04D000D8194 /* DashboardTableViewCell.xib in Resources */,
+				0EFEC85C2B8005D3009CFD49 /* AdminDBTableViewCell.xib in Resources */,
 				0E1ABAB32B7AAEA1000D8194 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,9 +308,11 @@
 				0E1ABAD32B7AB08F000D8194 /* CameraTableViewCell.swift in Sources */,
 				0E4646152B7F1A3A006DD633 /* BuildingsModel.swift in Sources */,
 				0E1ABAC92B7AB04D000D8194 /* Utils.swift in Sources */,
+				0EFEC85B2B8005D3009CFD49 /* AdminDBTableViewCell.swift in Sources */,
 				0E1ABACA2B7AB04D000D8194 /* DashboardViewController.swift in Sources */,
 				0E1ABAB02B7AAEA1000D8194 /* ViewController.swift in Sources */,
 				0E1ABAC82B7AB04D000D8194 /* Colors.swift in Sources */,
+				0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */,
 				0E1ABAAC2B7AAEA1000D8194 /* AppDelegate.swift in Sources */,
 				0E1ABAAE2B7AAEA1000D8194 /* SceneDelegate.swift in Sources */,
 				0E1ABAD52B7AB08F000D8194 /* AddIssueViewController.swift in Sources */,

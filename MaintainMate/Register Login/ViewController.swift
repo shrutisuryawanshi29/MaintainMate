@@ -22,18 +22,31 @@ class ViewController: UIViewController {
         
         initialSetup()
         
+        //Looks for single or multiple taps.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func initialSetup() {
-        self.view.backgroundColor = Colors.shared.background
+        self.view.backgroundColor = Colors.shared.primaryDark
         self.viewBg.backgroundColor = Colors.shared.background
-        
+        self.viewBg.dropShadow()
         Utils.shared.cornerRadius(view: self.imgLogo, radius: 10)
         
         self.registerBtn.addTarget(self, action: #selector(openDashboard(_:)), for: .touchUpInside)
         
         viewBg.layer.borderWidth = 1.0
-        viewBg.layer.borderColor = Colors.shared.darkText.cgColor
+        viewBg.layer.borderColor = Colors.shared.borderColor.cgColor
         Utils.shared.cornerRadius(view: viewBg, radius: 20)
         
         registerBtn.backgroundColor = Colors.shared.primaryLight
@@ -46,7 +59,7 @@ class ViewController: UIViewController {
     
     @objc func openDashboard(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
+        let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
