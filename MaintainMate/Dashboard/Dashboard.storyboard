@@ -339,6 +339,67 @@
             </objects>
             <point key="canvasLocation" x="-185.49618320610685" y="-18.30985915492958"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="RPa-GI-XId">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iTd-Md-Sbn" customClass="WelcomeViewController" customModule="MaintainMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eto-6P-Qhc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUJ-8d-Dwn">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to MaintainMate!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh1-aY-ehm">
+                                <rect key="frame" x="18" y="426" width="357" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log your first issue!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-xo-htt">
+                                <rect key="frame" x="18" y="659" width="357" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDI-3o-p4p">
+                                <rect key="frame" x="295" y="688" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="QNt-7V-qes"/>
+                                    <constraint firstAttribute="width" constant="80" id="q4L-rh-qtL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BKK-Rm-gKj"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LDI-3o-p4p" firstAttribute="top" secondItem="eZg-xo-htt" secondAttribute="bottom" constant="10" id="4NF-Su-pjL"/>
+                            <constraint firstItem="Dh1-aY-ehm" firstAttribute="centerX" secondItem="BKK-Rm-gKj" secondAttribute="centerX" id="6xW-5T-8nl"/>
+                            <constraint firstAttribute="bottom" secondItem="EUJ-8d-Dwn" secondAttribute="bottom" id="Djh-oh-ca3"/>
+                            <constraint firstItem="BKK-Rm-gKj" firstAttribute="trailing" secondItem="EUJ-8d-Dwn" secondAttribute="trailing" id="OWi-Dv-bGz"/>
+                            <constraint firstItem="Dh1-aY-ehm" firstAttribute="centerY" secondItem="BKK-Rm-gKj" secondAttribute="centerY" id="R0i-l4-W4Y"/>
+                            <constraint firstItem="BKK-Rm-gKj" firstAttribute="bottom" secondItem="LDI-3o-p4p" secondAttribute="bottom" constant="50" id="XNj-6z-H7u"/>
+                            <constraint firstItem="BKK-Rm-gKj" firstAttribute="trailing" secondItem="eZg-xo-htt" secondAttribute="trailing" constant="18" id="XfY-ha-0d4"/>
+                            <constraint firstItem="BKK-Rm-gKj" firstAttribute="trailing" secondItem="Dh1-aY-ehm" secondAttribute="trailing" constant="18" id="Zn4-8n-Y7v"/>
+                            <constraint firstItem="BKK-Rm-gKj" firstAttribute="trailing" secondItem="LDI-3o-p4p" secondAttribute="trailing" constant="18" id="ccT-Ll-y8g"/>
+                            <constraint firstItem="EUJ-8d-Dwn" firstAttribute="top" secondItem="eto-6P-Qhc" secondAttribute="top" id="ejM-Fv-J7S"/>
+                            <constraint firstItem="eZg-xo-htt" firstAttribute="leading" secondItem="BKK-Rm-gKj" secondAttribute="leading" constant="18" id="fYi-Ag-bcg"/>
+                            <constraint firstItem="Dh1-aY-ehm" firstAttribute="leading" secondItem="BKK-Rm-gKj" secondAttribute="leading" constant="18" id="hTv-EB-ZA9"/>
+                            <constraint firstItem="EUJ-8d-Dwn" firstAttribute="leading" secondItem="BKK-Rm-gKj" secondAttribute="leading" id="lot-v3-I9u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgView" destination="EUJ-8d-Dwn" id="Ggc-Dv-ReG"/>
+                        <outlet property="btnAddIssue" destination="LDI-3o-p4p" id="FfI-8W-dwf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gel-EC-6kK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626.71755725190837" y="-18.30985915492958"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>

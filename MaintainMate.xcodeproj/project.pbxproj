@@ -23,8 +23,9 @@
 		0E1ABAD42B7AB08F000D8194 /* AddIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD02B7AB08F000D8194 /* AddIssue.storyboard */; };
 		0E1ABAD52B7AB08F000D8194 /* AddIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */; };
 		0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */; };
-		0E4646122B7F0B4D006DD633 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4646112B7F0B4D006DD633 /* GoogleService-Info.plist */; };
 		0E4646152B7F1A3A006DD633 /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */; };
+		0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */; };
+		0E8036502B82891D009CC18F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E80364F2B82891D009CC18F /* GoogleService-Info.plist */; };
 		0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */; };
 		0EFEC85B2B8005D3009CFD49 /* AdminDBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */; };
 		0EFEC85C2B8005D3009CFD49 /* AdminDBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */; };
@@ -50,8 +51,9 @@
 		0E1ABAD02B7AB08F000D8194 /* AddIssue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddIssue.storyboard; sourceTree = "<group>"; };
 		0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewController.swift; sourceTree = "<group>"; };
 		0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
-		0E4646112B7F0B4D006DD633 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
+		0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0E80364F2B82891D009CC18F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBViewController.swift; sourceTree = "<group>"; };
 		0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBTableViewCell.swift; sourceTree = "<group>"; };
 		0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminDBTableViewCell.xib; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 				0E1ABAAD2B7AAEA1000D8194 /* SceneDelegate.swift */,
 				0E1ABAB42B7AAEA3000D8194 /* Assets.xcassets */,
 				0E1ABAB62B7AAEA3000D8194 /* LaunchScreen.storyboard */,
-				0E4646112B7F0B4D006DD633 /* GoogleService-Info.plist */,
+				0E80364F2B82891D009CC18F /* GoogleService-Info.plist */,
 				0E1ABAB92B7AAEA3000D8194 /* Info.plist */,
 			);
 			path = MaintainMate;
@@ -135,6 +137,7 @@
 				0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */,
 				0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */,
 				0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */,
+				0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E1ABAD42B7AB08F000D8194 /* AddIssue.storyboard in Resources */,
-				0E4646122B7F0B4D006DD633 /* GoogleService-Info.plist in Resources */,
+				0E8036502B82891D009CC18F /* GoogleService-Info.plist in Resources */,
 				0E1ABAB82B7AAEA3000D8194 /* LaunchScreen.storyboard in Resources */,
 				0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */,
 				0E1ABACD2B7AB04D000D8194 /* Dashboard.storyboard in Resources */,
@@ -311,6 +314,7 @@
 				0EFEC85B2B8005D3009CFD49 /* AdminDBTableViewCell.swift in Sources */,
 				0E1ABACA2B7AB04D000D8194 /* DashboardViewController.swift in Sources */,
 				0E1ABAB02B7AAEA1000D8194 /* ViewController.swift in Sources */,
+				0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */,
 				0E1ABAC82B7AB04D000D8194 /* Colors.swift in Sources */,
 				0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */,
 				0E1ABAAC2B7AAEA1000D8194 /* AppDelegate.swift in Sources */,

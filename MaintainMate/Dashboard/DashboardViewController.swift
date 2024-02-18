@@ -25,6 +25,13 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
 
         initialSetup()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+            let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
+            controller.modalPresentationStyle = .popover
+            self.present(controller, animated: false)
+        }
     }
     
     func initialSetup() {

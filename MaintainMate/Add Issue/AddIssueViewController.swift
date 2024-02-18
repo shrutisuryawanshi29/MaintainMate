@@ -11,6 +11,7 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class AddIssueViewController: UIViewController {
 
@@ -167,6 +168,10 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
             print("No image found")
             return
         }
+        
+//        image.jpegData(compressionQuality: 0.5)
+//        let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
+//        storageRef.child()
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
     }
