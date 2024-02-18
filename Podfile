@@ -13,5 +13,6 @@ target 'MaintainMate' do
   pod 'FirebaseFirestore'
   pod 'FirebaseDatabase'
   pod 'FirebaseStorage'
+  pod 'GoogleSignIn'
 
 end
