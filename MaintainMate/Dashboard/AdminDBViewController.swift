@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AdminDBViewController: UIViewController {
-
+    
     @IBOutlet weak var tblViw: UITableView!
     
     override func viewDidLoad() {
@@ -22,7 +23,19 @@ class AdminDBViewController: UIViewController {
     }
     
     @IBAction func logoutBtnClick(_ sender: Any) {
-        self.dismiss(animated: true)
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            
+            if let data = UserDefaults.standard.object(forKey: "FIRUser") as? Data,
+               let _ = try? JSONDecoder().decode(FIRUser.self, from: data) {
+                let defaults = UserDefaults.standard
+                defaults.set(nil, forKey: "FIRUser")
+                self.dismiss(animated: true)
+            }
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
 }

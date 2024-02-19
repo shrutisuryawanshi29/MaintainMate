@@ -14,7 +14,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class AddIssueViewController: UIViewController {
-
+    
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var addIssueTblViw: UITableView!
     @IBOutlet weak var backBtn: UIButton!
@@ -25,9 +25,11 @@ class AddIssueViewController: UIViewController {
     
     var arrBuildings: [BuildingsModel] = []
     var arrBuildingStr : [String] = []
+    
+    var imageURL: URL? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initialSetup()
         
         fetchBuildingListFromDb()
@@ -64,7 +66,7 @@ class AddIssueViewController: UIViewController {
         addIssueTblViw.register(UINib(nibName: "CameraTableViewCell", bundle: nil), forCellReuseIdentifier: "CameraTableViewCell")
     }
     
-
+    
     func issueTypeDropDownClick() {
         //DROPDOWNS
         if let cell = addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
@@ -116,7 +118,7 @@ class AddIssueViewController: UIViewController {
                 }
             }
         })
-
+        
     }
     
     
@@ -125,6 +127,40 @@ class AddIssueViewController: UIViewController {
     }
     
     @IBAction func submitBtnClick(_ sender: Any) {
+        
+        if let cell = addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
+            
+            if cell.txtFldBuilding.text?.isEmpty ?? true {
+                
+            } else if cell.txtFldDescription.text?.isEmpty ?? true {
+                
+            } else if cell.txtFldFloor.text?.isEmpty ?? true {
+                
+            } else if cell.txtFldIssueType.text?.isEmpty ?? true {
+                
+            } else if cell.txtFldRoom.text?.isEmpty ?? true {
+                
+            } else if self.imageURL == nil {
+                
+            } else {
+                var dict =
+                ["building_name": cell.txtFldBuilding.text,
+                 "description": cell.txtFldDescription.text,
+                 "floor": cell.txtFldFloor.text,
+                 "issue_type": cell.txtFldIssueType.text,
+                 "room": cell.txtFldRoom.text,
+                 "timestamp": Date().timeIntervalSince1970,
+                 "imageUrl": self.imageURL?.absoluteString,
+                ] as [String : Any]
+                
+                let database = Firestore.firestore()
+                var collec = database.collection("issues")
+                collec.addDocument(data: dict ) { error in
+                    guard let err = error else {return}
+                }
+            }
+        }
+        
     }
     
 }
@@ -169,11 +205,23 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
             return
         }
         
-//        image.jpegData(compressionQuality: 0.5)
-//        let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
-//        storageRef.child()
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
+        
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
+        let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
+        let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().timeIntervalSince1970)")
+        
+        userPhotoRef.putData(imageData, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                return
+            }
+            
+            userPhotoRef.downloadURL { url, error in
+                guard let imgurl = url else {return }
+                self.imageURL = imgurl
+            }
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

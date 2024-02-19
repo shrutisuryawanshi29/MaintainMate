@@ -26,6 +26,7 @@
 		0E4646152B7F1A3A006DD633 /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */; };
 		0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */; };
 		0E8036502B82891D009CC18F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E80364F2B82891D009CC18F /* GoogleService-Info.plist */; };
+		0E8036522B82AFBA009CC18F /* FIRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8036512B82AFBA009CC18F /* FIRUser.swift */; };
 		0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */; };
 		0EFEC85B2B8005D3009CFD49 /* AdminDBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */; };
 		0EFEC85C2B8005D3009CFD49 /* AdminDBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */; };
@@ -54,6 +55,7 @@
 		0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
 		0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0E80364F2B82891D009CC18F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E8036512B82AFBA009CC18F /* FIRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRUser.swift; sourceTree = "<group>"; };
 		0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBViewController.swift; sourceTree = "<group>"; };
 		0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBTableViewCell.swift; sourceTree = "<group>"; };
 		0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminDBTableViewCell.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */,
+				0E8036512B82AFBA009CC18F /* FIRUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				0E1ABAB02B7AAEA1000D8194 /* ViewController.swift in Sources */,
 				0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */,
 				0E1ABAC82B7AB04D000D8194 /* Colors.swift in Sources */,
+				0E8036522B82AFBA009CC18F /* FIRUser.swift in Sources */,
 				0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */,
 				0E1ABAAC2B7AAEA1000D8194 /* AppDelegate.swift in Sources */,
 				0E1ABAAE2B7AAEA1000D8194 /* SceneDelegate.swift in Sources */,
@@ -477,11 +481,13 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MaintainMate/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needs your permission!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,11 +513,13 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MaintainMate/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needs your permission!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

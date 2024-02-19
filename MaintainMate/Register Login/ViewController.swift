@@ -7,14 +7,19 @@
 
 import UIKit
 import MaterialTextField
+import FirebaseCore
+import GoogleSignIn
+import FirebaseAuth
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var txtFldEmail: MFTextField!
     @IBOutlet weak var txtFldPassword: MFTextField!
     @IBOutlet weak var viewBg: UIView!
+    
+    @IBOutlet weak var signInButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,16 @@ class ViewController: UIViewController {
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        
+        
+        if let userExists = UserDefaults.standard.object(forKey: "FIRUser") as? Data {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
+                controller.modalPresentationStyle = .fullScreen
+                self.present(controller, animated: true)
+            }
+        }
     }
     
     //Calls this function when the tap is recognized.
@@ -50,7 +65,6 @@ class ViewController: UIViewController {
         Utils.shared.cornerRadius(view: viewBg, radius: 20)
         
         registerBtn.backgroundColor = Colors.shared.primaryLight
-        registerBtn.setTitleColor(.white, for: .normal)
         Utils.shared.cornerRadius(view: registerBtn)
         
         Utils.shared.setupTextField(textfield: txtFldEmail, placeholder: "Email")
@@ -58,11 +72,47 @@ class ViewController: UIViewController {
     }
     
     @objc func openDashboard(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
-        controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: true)
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+            guard error == nil else {
+                return
+            }
+            
+            guard let user = result?.user,
+                  let idToken = user.idToken?.tokenString
+            else {
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+            Auth.auth().signIn(with: credential) { result, error in
+                
+                
+                if error != nil {
+                    return
+                }
+                
+                var user = FIRUser()
+                user.email = result?.user.email
+                user.name = result?.user.displayName
+                user.uid = result?.user.uid
+                
+                if let encoded = try? JSONEncoder().encode(user) {
+                    let defaults = UserDefaults.standard
+                    defaults.set(encoded, forKey: "FIRUser")
+                }
+                
+                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
+                controller.modalPresentationStyle = .fullScreen
+                self.present(controller, animated: true)
+            }
+        }
     }
-
 }
 

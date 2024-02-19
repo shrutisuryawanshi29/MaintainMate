@@ -23,6 +23,20 @@ class Utils {
         textfield.placeholder = placeholder
         textfield.defaultPlaceholderColor = .gray
     }
+    
+    func convertDateToString() {
+        let timestamp: TimeInterval = Date().timeIntervalSince1970
+
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // for example, "2024-02-18 15:00:00"
+
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC") 
+
+        let dateString = dateFormatter.string(from: date)
+    }
 }
 
 extension UIView {
