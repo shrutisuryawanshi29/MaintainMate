@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class DashboardViewController: UIViewController {
 
@@ -32,6 +34,24 @@ class DashboardViewController: UIViewController {
             controller.modalPresentationStyle = .popover
             self.present(controller, animated: false)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let database = Firestore.firestore()
+        let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
+        
+        query.getDocuments(completion: { data, error in
+            if error != nil {
+                return
+            }
+            
+            for document in data!.documents {
+                document
+                
+                
+            }
+        })
+        
     }
     
     func initialSetup() {

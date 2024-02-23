@@ -37,6 +37,20 @@ class Utils {
 
         let dateString = dateFormatter.string(from: date)
     }
+    
+    func showError(title: String = "Error!", message: String) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        return alert
+    }
+    
+    func generateRandomIssueID(digits: Int = 5) -> String {
+        var number = String()
+        for _ in 1...digits {
+            number += "\(Int.random(in: 1...9))"
+        }
+        return "MM"+number+"\(Date().timeIntervalSince1970)"
+    }
 }
 
 extension UIView {

@@ -26,6 +26,8 @@ class AddIssueViewController: UIViewController {
     var arrBuildings: [BuildingsModel] = []
     var arrBuildingStr : [String] = []
     
+    var activityView : UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+    
     var imageURL: URL? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,9 @@ class AddIssueViewController: UIViewController {
     
     func initialSetup() {
         self.view.backgroundColor = Colors.shared.background
+        
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
         
         submitBtn.backgroundColor = Colors.shared.primaryLight
         submitBtn.setTitleColor(.white, for: .normal)
@@ -127,21 +132,20 @@ class AddIssueViewController: UIViewController {
     }
     
     @IBAction func submitBtnClick(_ sender: Any) {
-        
+        activityView.startAnimating()
         if let cell = addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
-            
-            if cell.txtFldBuilding.text?.isEmpty ?? true {
-                
-            } else if cell.txtFldDescription.text?.isEmpty ?? true {
-                
+            if cell.txtFldIssueType.text?.isEmpty ?? true {
+                self.present(Utils.shared.showError(message: "Select Issue Type"), animated: true)
+            } else if cell.txtFldBuilding.text?.isEmpty ?? true {
+                self.present(Utils.shared.showError(message: "Select Building"), animated: true)
             } else if cell.txtFldFloor.text?.isEmpty ?? true {
-                
-            } else if cell.txtFldIssueType.text?.isEmpty ?? true {
-                
+                self.present(Utils.shared.showError(message: "Enter Floor number"), animated: true)
             } else if cell.txtFldRoom.text?.isEmpty ?? true {
-                
+                self.present( Utils.shared.showError(message: "Enter Room number"), animated: true)
+            } else if cell.txtFldDescription.text?.isEmpty ?? true {
+                self.present(Utils.shared.showError(message: "Enter Description"), animated: true)
             } else if self.imageURL == nil {
-                
+                self.present(Utils.shared.showError(message: "Capture Image"), animated: true)
             } else {
                 var dict =
                 ["building_name": cell.txtFldBuilding.text,
@@ -150,19 +154,30 @@ class AddIssueViewController: UIViewController {
                  "issue_type": cell.txtFldIssueType.text,
                  "room": cell.txtFldRoom.text,
                  "timestamp": Date().timeIntervalSince1970,
-                 "imageUrl": self.imageURL?.absoluteString,
+                 "image_url": self.imageURL?.absoluteString,
+                 "uid": Auth.auth().currentUser!.uid,
+                 "issue_id": Utils.shared.generateRandomIssueID(),
                 ] as [String : Any]
                 
                 let database = Firestore.firestore()
                 var collec = database.collection("issues")
-                collec.addDocument(data: dict ) { error in
-                    guard let err = error else {return}
+                
+                collec.addDocument(data: dict) { error in
+                    if error != nil {
+                        self.present(Utils.shared.showError(message: error?.localizedDescription ?? ""), animated: true)
+                        return
+                    }
+                    
+                    let alert = UIAlertController(title: "Success!!", message: "You have successfully logged the issue", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel){_ in
+                        self.dismiss(animated: true)
+                    })
+                    self.present(alert, animated: true)
                 }
+                
             }
         }
-        
     }
-    
 }
 
 extension AddIssueViewController: UITableViewDelegate, UITableViewDataSource {
@@ -205,6 +220,7 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
             return
         }
         
+        activityView.startAnimating()
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
         
@@ -218,6 +234,7 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
             }
             
             userPhotoRef.downloadURL { url, error in
+                self.activityView.stopAnimating()
                 guard let imgurl = url else {return }
                 self.imageURL = imgurl
             }

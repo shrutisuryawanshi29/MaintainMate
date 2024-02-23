@@ -27,6 +27,7 @@
 		0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */; };
 		0E8036502B82891D009CC18F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E80364F2B82891D009CC18F /* GoogleService-Info.plist */; };
 		0E8036522B82AFBA009CC18F /* FIRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8036512B82AFBA009CC18F /* FIRUser.swift */; };
+		0EF2653F2B895170000C7DE7 /* IssuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2653E2B895170000C7DE7 /* IssuesModel.swift */; };
 		0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */; };
 		0EFEC85B2B8005D3009CFD49 /* AdminDBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */; };
 		0EFEC85C2B8005D3009CFD49 /* AdminDBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */; };
@@ -56,6 +57,7 @@
 		0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0E80364F2B82891D009CC18F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E8036512B82AFBA009CC18F /* FIRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRUser.swift; sourceTree = "<group>"; };
+		0EF2653E2B895170000C7DE7 /* IssuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesModel.swift; sourceTree = "<group>"; };
 		0EFEC8572B80059E009CFD49 /* AdminDBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBViewController.swift; sourceTree = "<group>"; };
 		0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDBTableViewCell.swift; sourceTree = "<group>"; };
 		0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminDBTableViewCell.xib; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */,
 				0E8036512B82AFBA009CC18F /* FIRUser.swift */,
+				0EF2653E2B895170000C7DE7 /* IssuesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */,
 				0E1ABAC82B7AB04D000D8194 /* Colors.swift in Sources */,
 				0E8036522B82AFBA009CC18F /* FIRUser.swift in Sources */,
+				0EF2653F2B895170000C7DE7 /* IssuesModel.swift in Sources */,
 				0EFEC8582B80059E009CFD49 /* AdminDBViewController.swift in Sources */,
 				0E1ABAAC2B7AAEA1000D8194 /* AppDelegate.swift in Sources */,
 				0E1ABAAE2B7AAEA1000D8194 /* SceneDelegate.swift in Sources */,
