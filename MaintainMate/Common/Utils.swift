@@ -24,6 +24,13 @@ class Utils {
         textfield.defaultPlaceholderColor = .gray
     }
     
+    func getCurrentDate() -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatterGet.string(from: Date())
+    }
+    
     func convertDateToString() {
         let timestamp: TimeInterval = Date().timeIntervalSince1970
 
@@ -49,7 +56,7 @@ class Utils {
         for _ in 1...digits {
             number += "\(Int.random(in: 1...9))"
         }
-        return "MM"+number+"\(Date().timeIntervalSince1970)"
+        return "MM"+number+"\(Date().timeIntervalSince1970)".prefix(10)
     }
 }
 

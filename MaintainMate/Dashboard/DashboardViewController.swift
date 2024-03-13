@@ -23,6 +23,8 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var addBtn: UIButton!
     
+    var responseData = [IssuesModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,24 +36,6 @@ class DashboardViewController: UIViewController {
             controller.modalPresentationStyle = .popover
             self.present(controller, animated: false)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let database = Firestore.firestore()
-        let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
-        
-        query.getDocuments(completion: { data, error in
-            if error != nil {
-                return
-            }
-            
-            for document in data!.documents {
-                document
-                
-                
-            }
-        })
-        
     }
     
     func initialSetup() {
@@ -105,7 +89,7 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.responseData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,7 +98,20 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         Utils.shared.cornerRadius(view: cell.statusViw,radius: 8.0)
         Utils.shared.cornerRadius( view: cell.viewBtn)
         cell.viewBtn.backgroundColor = Colors.shared.primaryLight
-        cell.statusViw.backgroundColor = indexPath.row % 2 == 0 ? .green : .red
+        
+        cell.lblIdDate.text = "\(responseData[indexPath.row].issueId!) | \(responseData[indexPath.row].timestamp!)"
+        cell.lblDescription.text = responseData[indexPath.row].description
+        cell.lblBuildingName.text = responseData[indexPath.row].buildingName
+        
+        if (responseData[indexPath.row].status == "Closed") {
+            cell.statusViw.backgroundColor = .green
+        }
+        else if (responseData[indexPath.row].status == "Inprogress") {
+            cell.statusViw.backgroundColor = .yellow
+        }
+        else {
+            cell.statusViw.backgroundColor = .red
+        }
         return cell
     }
     

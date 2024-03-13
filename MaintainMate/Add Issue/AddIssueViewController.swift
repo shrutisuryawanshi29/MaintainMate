@@ -153,10 +153,11 @@ class AddIssueViewController: UIViewController {
                  "floor": cell.txtFldFloor.text,
                  "issue_type": cell.txtFldIssueType.text,
                  "room": cell.txtFldRoom.text,
-                 "timestamp": Date().timeIntervalSince1970,
+                 "timestamp": Utils.shared.getCurrentDate(),
                  "image_url": self.imageURL?.absoluteString,
                  "uid": Auth.auth().currentUser!.uid,
                  "issue_id": Utils.shared.generateRandomIssueID(),
+                 "status": "Open",
                 ] as [String : Any]
                 
                 let database = Firestore.firestore()

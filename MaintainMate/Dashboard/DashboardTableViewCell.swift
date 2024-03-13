@@ -11,6 +11,11 @@ class DashboardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var statusViw: UIView!
     @IBOutlet weak var viewBtn: UIButton!
+    @IBOutlet weak var lblIdDate: UILabel!
+    @IBOutlet weak var lblBuildingName: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
