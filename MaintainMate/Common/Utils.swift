@@ -10,6 +10,7 @@ import MaterialTextField
 
 class Utils {
     static let shared = Utils()
+    public var isAdmin = false
     
     func cornerRadius(view: UIView, radius: CGFloat = 5) {
         view.layer.cornerRadius = radius

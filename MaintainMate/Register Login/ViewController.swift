@@ -37,11 +37,23 @@ class ViewController: UIViewController {
         
         
         if let userExists = UserDefaults.standard.object(forKey: "FIRUser") as? Data {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-                let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
-                controller.modalPresentationStyle = .fullScreen
-                self.present(controller, animated: true)
+            if Auth.auth().currentUser!.uid.localizedCaseInsensitiveCompare("6rXRM0C4nAYxP66deoXCI995GbA2") == .orderedSame {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    Utils.shared.isAdmin = true
+                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                    let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    self.present(controller, animated: true)
+                }
+            }
+            else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    Utils.shared.isAdmin = false
+                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                    let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    self.present(controller, animated: false)
+                }
             }
         }
     }
@@ -107,10 +119,21 @@ class ViewController: UIViewController {
                     defaults.set(encoded, forKey: "FIRUser")
                 }
                 
-                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-                let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
-                controller.modalPresentationStyle = .fullScreen
-                self.present(controller, animated: true)
+                //6rXRM0C4nAYxP66deoXCI995GbA2 - admin
+                if result?.user.uid.localizedCaseInsensitiveCompare("6rXRM0C4nAYxP66deoXCI995GbA2") == .orderedSame {
+                    Utils.shared.isAdmin = true
+                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                    let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    self.present(controller, animated: true)
+                }
+                else {
+                    Utils.shared.isAdmin = false
+                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                    let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    self.present(controller, animated: false)
+                }
             }
         }
     }

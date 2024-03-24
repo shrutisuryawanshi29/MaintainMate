@@ -27,7 +27,7 @@ class AdminDBViewController: UIViewController {
         responseData = []
         buildingDict = [:]
         let database = Firestore.firestore()
-        let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
+        let query: Query = database.collection("issues")
         
         query.getDocuments(completion: { data, error in
             if error != nil {

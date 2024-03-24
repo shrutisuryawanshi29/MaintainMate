@@ -29,6 +29,9 @@ class AddIssueViewController: UIViewController {
     var activityView : UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     var imageURL: URL? = nil
+    
+    var optionSelected = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +72,26 @@ class AddIssueViewController: UIViewController {
         submitBtn.setTitleColor(.white, for: .normal)
         Utils.shared.cornerRadius(view: submitBtn)
         addIssueTblViw.register(UINib(nibName: "CameraTableViewCell", bundle: nil), forCellReuseIdentifier: "CameraTableViewCell")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            //show initial popup
+            let alert = UIAlertController(title: "We have automated things for you!", message: "Do you want to manually enter the data or auto detect by our application?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "AUTO DETECT", style: .default) {_ in
+                self.optionSelected = 1
+                
+                let vc = UIImagePickerController()
+                vc.sourceType = .camera
+                vc.allowsEditing = false
+                vc.delegate = self
+                self.present(vc, animated: true)
+            })
+            alert.addAction(UIAlertAction(title: "ENTER MANUALLY", style: .cancel) {_ in
+                self.optionSelected = 2
+                self.activityView.startAnimating()
+            })
+            self.present(alert, animated: true)
+        }
+        
     }
     
     

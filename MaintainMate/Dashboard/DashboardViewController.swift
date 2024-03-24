@@ -21,6 +21,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var openBtn: UIButton!
     @IBOutlet weak var closeBtn: UIButton!
     
+    @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var addBtn: UIButton!
     
     var responseData = [IssuesModel]()
@@ -35,6 +36,26 @@ class DashboardViewController: UIViewController {
             let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
             controller.modalPresentationStyle = .popover
             self.present(controller, animated: false)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if !Utils.shared.isAdmin {
+            let database = Firestore.firestore()
+            let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
+            
+            query.getDocuments(completion: { data, error in
+                if error != nil {
+                    return
+                }
+                
+                for document in data!.documents {
+                    var dict = document.data()
+                    self.responseData.append(IssuesModel(buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
+                }
+                
+                self.dbTblViw.reloadData()
+            })
         }
     }
     
@@ -53,8 +74,28 @@ class DashboardViewController: UIViewController {
     
         addBtn.setTitle(" ADD ISSUE", for: .normal)
         addBtn.setTitleColor(.white, for: .normal)
+        
+        
+        addBtn.isHidden = Utils.shared.isAdmin ? true : false
+        btnLogout.isHidden = Utils.shared.isAdmin ? true : false
     }
     
+    
+    @IBAction func btnLogoutClick(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            
+            if let data = UserDefaults.standard.object(forKey: "FIRUser") as? Data,
+               let _ = try? JSONDecoder().decode(FIRUser.self, from: data) {
+                let defaults = UserDefaults.standard
+                defaults.set(nil, forKey: "FIRUser")
+                self.dismiss(animated: true)
+            }
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
     
     @IBAction func navigateToAddIssue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "AddIssue", bundle: nil)
