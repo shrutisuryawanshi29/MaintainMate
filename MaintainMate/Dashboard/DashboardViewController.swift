@@ -41,6 +41,7 @@ class DashboardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if !Utils.shared.isAdmin {
+            self.responseData = []
             let database = Firestore.firestore()
             let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
             

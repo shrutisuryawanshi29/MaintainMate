@@ -12,6 +12,8 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import CoreML
+import Vision
 
 class AddIssueViewController: UIViewController {
     
@@ -248,6 +250,8 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
         
+        analyzeImage(image: image)
+        
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
         let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
         let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().timeIntervalSince1970)")
@@ -288,6 +292,41 @@ extension AddIssueViewController : UITextFieldDelegate {
             return false
         }
         return true
+    }
+    
+}
+
+extension AddIssueViewController {
+    
+    private func analyzeImage(image: UIImage?) {
+        guard let buffer = image?.resize(size: CGSize(width: 150, height: 150))?
+            .getCVPixelBuffer() else {
+            return
+        }
+        
+        do {
+            let config = MLModelConfiguration()
+            let model = try Predictpaper(configuration: config)
+            let input = PredictpaperInput(conv2d_3_input: buffer)
+            
+            let output = try model.prediction(input: input)
+            let text = output.IdentityShapedArray
+
+            if text.scalars[0] > text.scalars[1]{
+                if let cell = self.addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
+                    cell.txtFldDescription.text = "Toilet Paper missing"
+                }
+            }
+            else {
+                if let cell = self.addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? CameraTableViewCell {
+                    cell.txtFldDescription.text = "Damaged Furniture"
+                }
+            }
+            
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
     
 }
