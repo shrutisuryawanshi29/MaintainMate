@@ -24,6 +24,9 @@
 		0E1ABAD52B7AB08F000D8194 /* AddIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */; };
 		0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */; };
 		0E4646152B7F1A3A006DD633 /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */; };
+		0E7F58D02BC4FB8100F7277D /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F58CF2BC4FB8100F7277D /* IssueDetailViewController.swift */; };
+		0E7F58D32BC4FC9700F7277D /* IssueDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F58D12BC4FC9700F7277D /* IssueDetailTableViewCell.swift */; };
+		0E7F58D42BC4FC9700F7277D /* IssueDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F58D22BC4FC9700F7277D /* IssueDetailTableViewCell.xib */; };
 		0E80364E2B8155FB009CC18F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */; };
 		0E8036502B82891D009CC18F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E80364F2B82891D009CC18F /* GoogleService-Info.plist */; };
 		0E8036522B82AFBA009CC18F /* FIRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8036512B82AFBA009CC18F /* FIRUser.swift */; };
@@ -57,6 +60,9 @@
 		0E1ABAD12B7AB08F000D8194 /* AddIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewController.swift; sourceTree = "<group>"; };
 		0E1ABAD22B7AB08F000D8194 /* CameraTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
 		0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
+		0E7F58CF2BC4FB8100F7277D /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		0E7F58D12BC4FC9700F7277D /* IssueDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailTableViewCell.swift; sourceTree = "<group>"; };
+		0E7F58D22BC4FC9700F7277D /* IssueDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailTableViewCell.xib; sourceTree = "<group>"; };
 		0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0E80364F2B82891D009CC18F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E8036512B82AFBA009CC18F /* FIRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRUser.swift; sourceTree = "<group>"; };
@@ -150,6 +156,9 @@
 				0EFEC8592B8005D3009CFD49 /* AdminDBTableViewCell.swift */,
 				0EFEC85A2B8005D3009CFD49 /* AdminDBTableViewCell.xib */,
 				0E80364D2B8155FB009CC18F /* WelcomeViewController.swift */,
+				0E7F58CF2BC4FB8100F7277D /* IssueDetailViewController.swift */,
+				0E7F58D12BC4FC9700F7277D /* IssueDetailTableViewCell.swift */,
+				0E7F58D22BC4FC9700F7277D /* IssueDetailTableViewCell.xib */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 				0E8036502B82891D009CC18F /* GoogleService-Info.plist in Resources */,
 				0E1ABAB82B7AAEA3000D8194 /* LaunchScreen.storyboard in Resources */,
 				0E1ABAD62B7AB08F000D8194 /* CameraTableViewCell.xib in Resources */,
+				0E7F58D42BC4FC9700F7277D /* IssueDetailTableViewCell.xib in Resources */,
 				0E1ABACD2B7AB04D000D8194 /* Dashboard.storyboard in Resources */,
 				0E1ABAB52B7AAEA3000D8194 /* Assets.xcassets in Resources */,
 				0E1ABACC2B7AB04D000D8194 /* DashboardTableViewCell.xib in Resources */,
@@ -339,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7F58D32BC4FC9700F7277D /* IssueDetailTableViewCell.swift in Sources */,
 				0E1ABAD32B7AB08F000D8194 /* CameraTableViewCell.swift in Sources */,
 				0E4646152B7F1A3A006DD633 /* BuildingsModel.swift in Sources */,
 				0E1ABAC92B7AB04D000D8194 /* Utils.swift in Sources */,
@@ -354,6 +365,7 @@
 				0ED93BA52BBCF17000C153B4 /* Predictpaper (1).mlpackage in Sources */,
 				0E1ABAAE2B7AAEA1000D8194 /* SceneDelegate.swift in Sources */,
 				0ED93BA82BBCF1DC00C153B4 /* Extensions.swift in Sources */,
+				0E7F58D02BC4FB8100F7277D /* IssueDetailViewController.swift in Sources */,
 				0E1ABAD52B7AB08F000D8194 /* AddIssueViewController.swift in Sources */,
 				0E1ABACB2B7AB04D000D8194 /* DashboardTableViewCell.swift in Sources */,
 				0EB92EF72BC0CE8400344B44 /* Predictpaper.mlpackage in Sources */,

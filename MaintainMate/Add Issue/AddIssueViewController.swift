@@ -254,7 +254,7 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
         
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
         let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
-        let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().timeIntervalSince1970)")
+        let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().ticks).jpg")
         
         userPhotoRef.putData(imageData, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {

@@ -81,6 +81,15 @@ class DashboardViewController: UIViewController {
         btnLogout.isHidden = Utils.shared.isAdmin ? true : false
     }
     
+    @objc func viewDetailsClick(sender: UIButton) {
+        let tag = sender.tag-1
+        
+        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "IssueDetailViewController") as! IssueDetailViewController
+        controller.responseData = self.responseData[tag]
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false)
+    }
     
     @IBAction func btnLogoutClick(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -140,7 +149,8 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         Utils.shared.cornerRadius(view: cell.statusViw,radius: 8.0)
         Utils.shared.cornerRadius( view: cell.viewBtn)
         cell.viewBtn.backgroundColor = Colors.shared.primaryLight
-        
+        cell.viewBtn.addTarget(self, action: #selector(viewDetailsClick(sender:)), for: .touchUpInside)
+        cell.viewBtn.tag = indexPath.row+1
         cell.lblIdDate.text = "\(responseData[indexPath.row].issueId!) | \(responseData[indexPath.row].timestamp!)"
         cell.lblDescription.text = responseData[indexPath.row].description
         cell.lblBuildingName.text = responseData[indexPath.row].buildingName
