@@ -26,7 +26,12 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var widthConstraintForBackBtn: NSLayoutConstraint!
     @IBOutlet weak var backBtn: UIButton!
     
+    @IBOutlet weak var lblAllComplaints: UILabel!
+    @IBOutlet weak var lblOpenComplaints: UILabel!
+    @IBOutlet weak var lblCloseComplaints: UILabel!
+    
     var responseData = [IssuesModel]()
+    var allResponseForData = [IssuesModel]()
     var buildingName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +51,7 @@ class DashboardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.responseData = []
+        self.allResponseForData = []
         let database = Firestore.firestore()
         
         var query: Query = Utils.shared.isAdmin ? database.collection("issues").whereField("building_name", isEqualTo: buildingName) : database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
@@ -60,6 +66,13 @@ class DashboardViewController: UIViewController {
                 self.responseData.append(IssuesModel(documentId: document.documentID, buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
             }
             self.responseData = self.responseData.sorted {$0.issueTypeSortOrder < $1.issueTypeSortOrder}
+            self.allResponseForData = self.responseData
+            
+            //set Tabbar values
+            self.lblAllComplaints.text = "\(self.allResponseForData.count)"
+            self.lblOpenComplaints.text = "\(self.allResponseForData.filter({$0.status == "Open" || $0.status == "Inprogress"}).count)"
+            self.lblCloseComplaints.text = "\(self.allResponseForData.filter({$0.status == "Closed"}).count)"
+            
             self.dbTblViw.reloadData()
         })
     }
@@ -125,17 +138,21 @@ class DashboardViewController: UIViewController {
             allHighlightedViw.isHidden = false
             closeHighlightedViw.isHidden = true
             openHighlightedViw.isHidden = true
+            self.responseData = self.allResponseForData
         }
         else if sender.tag == 20 {
             allHighlightedViw.isHidden = true
             closeHighlightedViw.isHidden = true
             openHighlightedViw.isHidden = false
+            self.responseData = self.allResponseForData.filter({$0.status == "Open" || $0.status == "Inprogress"})
         }
         else if sender.tag == 30 {
             allHighlightedViw.isHidden = true
             closeHighlightedViw.isHidden = false
             openHighlightedViw.isHidden = true
+            self.responseData = self.allResponseForData.filter({$0.status == "Closed"})
         }
+        self.dbTblViw.reloadData()
     }
     
     @IBAction func backBtnClick(_ sender: Any) {
