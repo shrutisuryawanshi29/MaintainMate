@@ -36,7 +36,7 @@ class AdminDBViewController: UIViewController {
             
             for document in data!.documents {
                 var dict = document.data()
-                self.responseData.append(IssuesModel(buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
+                self.responseData.append(IssuesModel(documentId: document.documentID, buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
             }
             
             for resp in self.responseData {
@@ -95,7 +95,8 @@ extension AdminDBViewController : UITableViewDelegate, UITableViewDataSource {
         let currentKey = keysArray[indexPath.row]
         let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
-        controller.responseData = self.responseData.filter {$0.buildingName == currentKey}
+//        controller.responseData = self.responseData.filter {$0.buildingName == currentKey}
+        controller.buildingName = currentKey
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: false)
     }

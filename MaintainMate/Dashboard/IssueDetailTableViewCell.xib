@@ -147,6 +147,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="bgView" destination="NvE-Pg-7DQ" id="6Dx-Nm-lL5"/>
+                <outlet property="imgDownArrow" destination="AnY-HO-nAr" id="h5R-TF-aTq"/>
                 <outlet property="imgViw" destination="uzQ-ZP-3u8" id="OtE-QG-TV5"/>
                 <outlet property="lblBuildingName" destination="aMQ-fO-48J" id="se3-HY-iuT"/>
                 <outlet property="lblDate" destination="lVN-xd-Zjp" id="Ynp-qe-Noz"/>
@@ -168,7 +169,7 @@
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

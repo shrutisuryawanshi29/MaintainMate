@@ -23,14 +23,17 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var widthConstraintForBackBtn: NSLayoutConstraint!
+    @IBOutlet weak var backBtn: UIButton!
     
     var responseData = [IssuesModel]()
-    
+    var buildingName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initialSetup()
         
+        // only show welcome screen for first time users and not admin
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
@@ -40,24 +43,23 @@ class DashboardViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if !Utils.shared.isAdmin {
-            self.responseData = []
-            let database = Firestore.firestore()
-            let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
+        self.responseData = []
+        let database = Firestore.firestore()
+        
+        var query: Query = Utils.shared.isAdmin ? database.collection("issues").whereField("building_name", isEqualTo: buildingName) : database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
+        
+        query.getDocuments(completion: { data, error in
+            if error != nil {
+                return
+            }
             
-            query.getDocuments(completion: { data, error in
-                if error != nil {
-                    return
-                }
-                
-                for document in data!.documents {
-                    var dict = document.data()
-                    self.responseData.append(IssuesModel(buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
-                }
-                
-                self.dbTblViw.reloadData()
-            })
-        }
+            for document in data!.documents {
+                var dict = document.data()
+                self.responseData.append(IssuesModel(documentId: document.documentID, buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
+            }
+            
+            self.dbTblViw.reloadData()
+        })
     }
     
     func initialSetup() {
@@ -72,13 +74,15 @@ class DashboardViewController: UIViewController {
         
         addBtn.backgroundColor = Colors.shared.primaryDark
         Utils.shared.cornerRadius(view: addBtn, radius: 40.0)
-    
+        
         addBtn.setTitle(" ADD ISSUE", for: .normal)
         addBtn.setTitleColor(.white, for: .normal)
         
         
-        addBtn.isHidden = Utils.shared.isAdmin ? true : false
-        btnLogout.isHidden = Utils.shared.isAdmin ? true : false
+        addBtn.isHidden = Utils.shared.isAdmin
+        btnLogout.isHidden = Utils.shared.isAdmin
+        widthConstraintForBackBtn.constant = Utils.shared.isAdmin ? 40 : 0
+        backBtn.isHidden = !Utils.shared.isAdmin
     }
     
     @objc func viewDetailsClick(sender: UIButton) {

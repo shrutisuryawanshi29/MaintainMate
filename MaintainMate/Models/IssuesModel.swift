@@ -8,7 +8,7 @@
 import Foundation
 
 public class IssuesModel {
-    
+    var documentId: String?
     var buildingFloors: String?
     var buildingName: String?
     var description: String?
@@ -20,7 +20,8 @@ public class IssuesModel {
     var uid: String?
     var status: String?
     
-    init(buildingFloors: String? = nil, buildingName: String? = nil, description: String? = nil, imageUrl: String? = nil, issueId: String? = nil, issueType: String? = nil, room: String? = nil, timestamp: String? = nil, uid: String? = nil, status: String? = nil) {
+    init(documentId: String? = nil, buildingFloors: String? = nil, buildingName: String? = nil, description: String? = nil, imageUrl: String? = nil, issueId: String? = nil, issueType: String? = nil, room: String? = nil, timestamp: String? = nil, uid: String? = nil, status: String? = nil) {
+        self.documentId = documentId
         self.buildingFloors = buildingFloors
         self.buildingName = buildingName
         self.description = description

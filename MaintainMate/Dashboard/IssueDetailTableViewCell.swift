@@ -20,6 +20,7 @@ class IssueDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var txtFldIssueStatus: MFTextField!
     @IBOutlet weak var viwStatus: UIView!
+    @IBOutlet weak var imgDownArrow: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class IssueDetailTableViewCell: UITableViewCell {
         Utils.shared.cornerRadius(view: bgView)
         Utils.shared.cornerRadius(view: viwStatus, radius: 8.0)
         bgView.dropShadow(shadowOpacity: 0.3)
+        imgDownArrow.isHidden = !Utils.shared.isAdmin
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

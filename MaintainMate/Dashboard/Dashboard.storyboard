@@ -90,6 +90,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oY-yp-PmH">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Qq-wJj">
+                                        <rect key="frame" x="5" y="50" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="gZt-6a-5PP"/>
+                                            <constraint firstAttribute="height" constant="40" id="lBA-9u-mf4"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="backBtnClick:" destination="VwK-VJ-23D" eventType="touchUpInside" id="Lad-Yc-Me9"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DASHBOARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGZ-jR-6Lo">
                                         <rect key="frame" x="55.000000000000007" y="60" width="105.66666666666669" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -107,19 +120,6 @@
                                         <buttonConfiguration key="configuration" style="plain" image="power" catalog="system"/>
                                         <connections>
                                             <action selector="btnLogoutClick:" destination="VwK-VJ-23D" eventType="touchUpInside" id="eHA-Cl-8Vp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Qq-wJj">
-                                        <rect key="frame" x="5" y="50" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="gZt-6a-5PP"/>
-                                            <constraint firstAttribute="height" constant="40" id="lBA-9u-mf4"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=" "/>
-                                        <connections>
-                                            <action selector="backBtnClick:" destination="VwK-VJ-23D" eventType="touchUpInside" id="Lad-Yc-Me9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -341,6 +341,7 @@
                         <outlet property="addBtn" destination="Lkn-ih-1LG" id="v69-Oq-yUX"/>
                         <outlet property="allBtn" destination="Ybz-ZD-tsd" id="aON-GZ-KON"/>
                         <outlet property="allHighlightedViw" destination="3Qd-O9-CDc" id="vbb-VT-nba"/>
+                        <outlet property="backBtn" destination="7bk-Qq-wJj" id="XFA-hK-Ben"/>
                         <outlet property="btnLogout" destination="VQS-PX-zuy" id="i7I-59-3h6"/>
                         <outlet property="closeBtn" destination="Ohe-kH-nUg" id="K9f-j4-J1H"/>
                         <outlet property="closeHighlightedViw" destination="Mku-8O-Tof" id="1J2-O6-lk4"/>
@@ -348,6 +349,7 @@
                         <outlet property="openBtn" destination="2g0-ji-7M7" id="d2m-Vz-rO8"/>
                         <outlet property="openHighlightedViw" destination="cQd-PI-9Wl" id="Ahc-UT-WXs"/>
                         <outlet property="topViw" destination="9I0-Tq-gxq" id="wER-EE-ci6"/>
+                        <outlet property="widthConstraintForBackBtn" destination="gZt-6a-5PP" id="gYh-Vh-yMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xmm-X8-Ng6" sceneMemberID="firstResponder"/>

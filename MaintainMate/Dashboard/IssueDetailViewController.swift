@@ -19,6 +19,8 @@ class IssueDetailViewController: UIViewController {
     var responseData: IssuesModel?
     let statusOfIssueDropDown = DropDown()
     
+    var changedStatus:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -46,6 +48,7 @@ class IssueDetailViewController: UIViewController {
                 }
             }
         })
+        self.btnUpdateStatus.isHidden = !Utils.shared.isAdmin
     }
     
     func changeStatusOfIssueDropDown() {
@@ -58,8 +61,22 @@ class IssueDetailViewController: UIViewController {
             statusOfIssueDropDown.backgroundColor = Colors.shared.background
             statusOfIssueDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
                 cell.txtFldIssueStatus.text = item
+                self.changedStatus = getStatusId(item: item)
             }
             statusOfIssueDropDown.show()
+        }
+    }
+    
+    func getStatusId(item: String) -> String? {
+        switch item {
+        case "Open":
+            return "Open"
+        case "In-Progress":
+            return "Inprogress"
+        case "Close":
+            return "Closed"
+        default:
+            return nil
         }
     }
     
@@ -68,7 +85,22 @@ class IssueDetailViewController: UIViewController {
     }
     
     @IBAction func btnUpdateStatusClick(_ sender: Any) {
-        
+        if let changedStatus = self.changedStatus {
+            let database = Firestore.firestore()
+            var reference = database.collection("issues").document(responseData?.documentId ?? "")
+            reference.updateData(["status": changedStatus], completion: { error in
+                if let error = error {
+                    self.present(Utils.shared.showError(message: error.localizedDescription), animated: true)
+                    return
+                }
+                
+                let alert = UIAlertController(title: "Update Success!!", message: "You have successfully updated the status of the issue", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel){_ in
+                    self.dismiss(animated: true)
+                })
+                self.present(alert, animated: true)
+            })
+        }
     }
     
 }
@@ -104,6 +136,7 @@ extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.txtFldIssueStatus.tag = 100
         
         Utils.shared.setupTextField(textfield: cell.txtFldIssueStatus, placeholder: "Change Status")
+        cell.txtFldIssueStatus.isHidden = !Utils.shared.isAdmin
         return cell
     }
 }
