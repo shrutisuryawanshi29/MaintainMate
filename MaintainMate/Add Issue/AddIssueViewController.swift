@@ -89,7 +89,6 @@ class AddIssueViewController: UIViewController {
             })
             alert.addAction(UIAlertAction(title: "ENTER MANUALLY", style: .cancel) {_ in
                 self.optionSelected = 2
-                self.activityView.startAnimating()
             })
             self.present(alert, animated: true)
         }

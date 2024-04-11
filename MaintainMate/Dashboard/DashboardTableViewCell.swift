@@ -14,6 +14,7 @@ class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var lblIdDate: UILabel!
     @IBOutlet weak var lblBuildingName: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblIssueType: UILabel!
     
     
     override func awakeFromNib() {

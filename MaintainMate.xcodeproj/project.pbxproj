@@ -113,7 +113,7 @@
 			children = (
 				0ED93BA32BBCF15D00C153B4 /* Model */,
 				0E4646162B7F260B006DD633 /* Register Login */,
-				0E4646132B7F1A26006DD633 /* Models */,
+				0E4646132B7F1A26006DD633 /* Data Models */,
 				0E1ABACE2B7AB08F000D8194 /* Add Issue */,
 				0E1ABABF2B7AB04D000D8194 /* Common */,
 				0E1ABAC32B7AB04D000D8194 /* Dashboard */,
@@ -174,14 +174,14 @@
 			path = "Add Issue";
 			sourceTree = "<group>";
 		};
-		0E4646132B7F1A26006DD633 /* Models */ = {
+		0E4646132B7F1A26006DD633 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
 				0E4646142B7F1A3A006DD633 /* BuildingsModel.swift */,
 				0E8036512B82AFBA009CC18F /* FIRUser.swift */,
 				0EF2653E2B895170000C7DE7 /* IssuesModel.swift */,
 			);
-			path = Models;
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 		0E4646162B7F260B006DD633 /* Register Login */ = {

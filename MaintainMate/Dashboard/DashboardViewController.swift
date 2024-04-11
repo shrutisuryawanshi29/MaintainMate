@@ -34,11 +34,13 @@ class DashboardViewController: UIViewController {
         initialSetup()
         
         // only show welcome screen for first time users and not admin
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-            let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
-            controller.modalPresentationStyle = .popover
-            self.present(controller, animated: false)
+        if !Utils.shared.isAdmin && !UserDefaults.standard.bool(forKey: "FirstTimeUser") {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
+                controller.modalPresentationStyle = .popover
+                self.present(controller, animated: false)
+            }
         }
     }
     
@@ -57,7 +59,7 @@ class DashboardViewController: UIViewController {
                 var dict = document.data()
                 self.responseData.append(IssuesModel(documentId: document.documentID, buildingFloors: dict["floor"] as! String, buildingName: dict["building_name"] as! String, description: dict["description"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, issueType: dict["issue_type"] as! String, room: dict["room"] as! String, timestamp: dict["timestamp"] as! String, uid: dict["uid"] as! String, status: dict["status"] as! String))
             }
-            
+            self.responseData = self.responseData.sorted {$0.issueTypeSortOrder < $1.issueTypeSortOrder}
             self.dbTblViw.reloadData()
         })
     }
@@ -158,6 +160,7 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         cell.lblIdDate.text = "\(responseData[indexPath.row].issueId!) | \(responseData[indexPath.row].timestamp!)"
         cell.lblDescription.text = responseData[indexPath.row].description
         cell.lblBuildingName.text = responseData[indexPath.row].buildingName
+        cell.lblIssueType.text = responseData[indexPath.row].issueType
         
         if (responseData[indexPath.row].status == "Closed") {
             cell.statusViw.backgroundColor = .green

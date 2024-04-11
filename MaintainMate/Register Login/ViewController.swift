@@ -119,6 +119,11 @@ class ViewController: UIViewController {
                     defaults.set(encoded, forKey: "FIRUser")
                 }
                 
+                let value = UserDefaults.standard.bool(forKey: "FirstTimeUser")
+                if !value {
+                    UserDefaults.standard.set(true, forKey: "FirstTimeUser")
+                }
+                
                 //6rXRM0C4nAYxP66deoXCI995GbA2 - admin
                 if result?.user.uid.localizedCaseInsensitiveCompare("6rXRM0C4nAYxP66deoXCI995GbA2") == .orderedSame {
                     Utils.shared.isAdmin = true

@@ -91,3 +91,9 @@ extension Date {
         return UInt64((self.timeIntervalSince1970 + 62_135_596_800) * 10_000_000)
     }
 }
+
+extension IssuesModel {
+    var issueTypeSortOrder: Int {
+        return ["Water Leakage", "Electricity Outage", "Somebody is locked", "Other"].firstIndex(of: issueType) ?? 0
+    }
+}
