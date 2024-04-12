@@ -29,6 +29,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var lblAllComplaints: UILabel!
     @IBOutlet weak var lblOpenComplaints: UILabel!
     @IBOutlet weak var lblCloseComplaints: UILabel!
+    @IBOutlet weak var lblNoComplaints: UILabel!
     
     var responseData = [IssuesModel]()
     var allResponseForData = [IssuesModel]()
@@ -41,6 +42,7 @@ class DashboardViewController: UIViewController {
         // only show welcome screen for first time users and not admin
         if !Utils.shared.isAdmin && !UserDefaults.standard.bool(forKey: "FirstTimeUser") {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                UserDefaults.standard.set(true, forKey: "FirstTimeUser")
                 let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
                 let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
                 controller.modalPresentationStyle = .popover
@@ -68,6 +70,13 @@ class DashboardViewController: UIViewController {
             self.responseData = self.responseData.sorted {$0.issueTypeSortOrder < $1.issueTypeSortOrder}
             self.allResponseForData = self.responseData
             
+            if self.allResponseForData.count == 0 {
+                self.lblNoComplaints.isHidden = false
+                self.dbTblViw.isHidden = true
+            } else  {
+                self.lblNoComplaints.isHidden = true
+                self.dbTblViw.isHidden = false
+            }
             //set Tabbar values
             self.lblAllComplaints.text = "\(self.allResponseForData.count)"
             self.lblOpenComplaints.text = "\(self.allResponseForData.filter({$0.status == "Open" || $0.status == "Inprogress"}).count)"

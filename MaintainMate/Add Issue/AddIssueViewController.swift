@@ -44,9 +44,6 @@ class AddIssueViewController: UIViewController {
         //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
     }
     
@@ -249,7 +246,9 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
         
-        analyzeImage(image: image)
+        if self.optionSelected == 1 {
+            analyzeImage(image: image)
+        }
         
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
         let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
