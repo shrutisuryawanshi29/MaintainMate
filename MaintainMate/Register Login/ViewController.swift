@@ -102,38 +102,49 @@ class ViewController: UIViewController {
             
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: user.accessToken.tokenString)
-            Auth.auth().signIn(with: credential) { result, error in
-                
-                
-                if error != nil {
-                    return
+            
+            let email = user.profile?.email ?? ""
+            let allowedDomains = ["uncc.edu", "charlotte.edu"]
+            let emailDomain = email.components(separatedBy: "@").last ?? ""
+            
+            // restrict access to other users who are not part of the organization
+            if allowedDomains.contains(emailDomain) {
+                Auth.auth().signIn(with: credential) { result, error in
+                    
+                    if error != nil {
+                        self.present(Utils.shared.showError(message: error?.localizedDescription ?? ""), animated: true)
+                        return
+                    }
+                    
+                    var user = FIRUser()
+                    user.email = result?.user.email
+                    user.name = result?.user.displayName
+                    user.uid = result?.user.uid
+                    
+                    if let encoded = try? JSONEncoder().encode(user) {
+                        let defaults = UserDefaults.standard
+                        defaults.set(encoded, forKey: "FIRUser")
+                    }
+                    
+                    //6rXRM0C4nAYxP66deoXCI995GbA2 - admin
+                    if result?.user.uid.localizedCaseInsensitiveCompare("6rXRM0C4nAYxP66deoXCI995GbA2") == .orderedSame {
+                        Utils.shared.isAdmin = true
+                        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                        let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
+                        controller.modalPresentationStyle = .fullScreen
+                        self.present(controller, animated: true)
+                    }
+                    else {
+                        Utils.shared.isAdmin = false
+                        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                        let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
+                        controller.modalPresentationStyle = .fullScreen
+                        self.present(controller, animated: false)
+                    }
                 }
-                
-                var user = FIRUser()
-                user.email = result?.user.email
-                user.name = result?.user.displayName
-                user.uid = result?.user.uid
-                
-                if let encoded = try? JSONEncoder().encode(user) {
-                    let defaults = UserDefaults.standard
-                    defaults.set(encoded, forKey: "FIRUser")
-                }
-                
-                //6rXRM0C4nAYxP66deoXCI995GbA2 - admin
-                if result?.user.uid.localizedCaseInsensitiveCompare("6rXRM0C4nAYxP66deoXCI995GbA2") == .orderedSame {
-                    Utils.shared.isAdmin = true
-                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-                    let controller = storyboard.instantiateViewController(identifier: "AdminDBViewController") as! AdminDBViewController
-                    controller.modalPresentationStyle = .fullScreen
-                    self.present(controller, animated: true)
-                }
-                else {
-                    Utils.shared.isAdmin = false
-                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-                    let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
-                    controller.modalPresentationStyle = .fullScreen
-                    self.present(controller, animated: false)
-                }
+            }
+            else {
+                self.present(Utils.shared.showError(message: "Unauthorized email domain - Please use your 'uncc.edu' or 'charlotte.edu' email id"), animated: true)
             }
         }
     }
