@@ -90,8 +90,33 @@ class AddIssueViewController: UIViewController {
             self.present(alert, animated: true)
         }
         
+        //MARK: hardcoded data for image
+        //self.showImageFromAssets()
     }
     
+    func showImageFromAssets() {
+        // brokenTable,toiletRollMissing
+        self.imageIssue = UIImage(named: "brokenTable")
+        self.addIssueTblViw.reloadData()
+        
+        analyzeImage(image: self.imageIssue)
+        
+        guard let imageData = imageIssue?.jpegData(compressionQuality: 0.5) else {return}
+        let storageRef = Storage.storage(url: "gs://maintenancemate-25270.appspot.com").reference()
+        let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().ticks).jpg")
+        
+        userPhotoRef.putData(imageData, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                return
+            }
+            
+            userPhotoRef.downloadURL { url, error in
+                self.activityView.stopAnimating()
+                guard let imgurl = url else {return }
+                self.imageURL = imgurl
+            }
+        }
+    }
     
     func issueTypeDropDownClick() {
         //DROPDOWNS

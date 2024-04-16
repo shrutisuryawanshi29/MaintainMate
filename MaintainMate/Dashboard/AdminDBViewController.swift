@@ -95,7 +95,6 @@ extension AdminDBViewController : UITableViewDelegate, UITableViewDataSource {
         let currentKey = keysArray[indexPath.row]
         let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
-//        controller.responseData = self.responseData.filter {$0.buildingName == currentKey}
         controller.buildingName = currentKey
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: false)
