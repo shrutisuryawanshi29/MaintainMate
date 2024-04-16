@@ -1,0 +1,6 @@
+framework module Pods_MaintainMate {
+  umbrella header "Pods-MaintainMate-umbrella.h"
+
+  export *
+  module * { export * }
+}
